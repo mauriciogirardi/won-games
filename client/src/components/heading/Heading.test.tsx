@@ -4,7 +4,7 @@ import { renderWithTheme } from '@/utils/tests/helpers'
 
 describe('<Heading />', () => {
   it('should render a white heading by default', () => {
-    renderWithTheme(<Heading>Won Games</Heading>)
+    renderWithTheme(<Heading color="white">Won Games</Heading>)
 
     expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
       color: '#FAFAFA'

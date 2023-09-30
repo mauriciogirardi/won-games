@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { {{pascalCase name}} } from './{{pascalCase name}}'
+import { renderWithTheme } from '@/utils/tests/helpers'
 
 describe('<{{pascalCase name}} />', () => {
   it('should render the heading', () => {
-    render(<{{pascalCase name}} />)
+    renderWithTheme(<{{pascalCase name}} />)
 
     expect(
       screen.getByRole('heading', { name: /{{pascalCase name}}/i })

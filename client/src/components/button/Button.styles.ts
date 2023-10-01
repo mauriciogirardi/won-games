@@ -11,19 +11,23 @@ const wrapperModifier = {
     font-size: ${theme.font.sizes.xsmall};
     height: 3rem;
   `,
+
   large: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} ${theme.spacings.large};
     height: 5rem;
   `,
+
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.small};
     padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
     height: 4rem;
   `,
+
   fullWidth: () => css`
     width: 100%;
   `,
+
   withIcon: (theme: DefaultTheme) => css`
     display: inline-flex;
     align-items: center;
@@ -52,5 +56,9 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     ${!!size && wrapperModifier[size](theme)}
     ${!!hasIcon && wrapperModifier.withIcon(theme)}
     ${fullWidth && wrapperModifier.fullWidth()}
+
+    &:hover {
+      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+    }
   `}
 `

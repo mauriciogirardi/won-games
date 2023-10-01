@@ -22,20 +22,21 @@ const wrapperModifiers = {
     }
   `,
 
-  small: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.medium};
-
-    &::after {
-      width: 3rem;
-    }
-  `,
-
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xlarge};
 
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.xxlarge};
     `}
+  `,
+
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.medium};
+
+    &::after {
+      width: 3rem;
+      bottom: -0.5rem;
+    }
   `
 }
 

@@ -29,10 +29,6 @@ const wrapperModifier = {
   `,
 
   withIcon: (theme: DefaultTheme) => css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     svg {
       width: 1.5rem;
 
@@ -52,6 +48,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     padding: ${theme.spacings.xxsmall};
     cursor: pointer;
     overflow: hidden;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     ${!!size && wrapperModifier[size](theme)}
     ${!!hasIcon && wrapperModifier.withIcon(theme)}

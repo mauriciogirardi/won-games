@@ -34,3 +34,18 @@ export const WithIcon: StoryObj<typeof Button> = {
     size: 'small'
   }
 }
+
+export const JustIcon: StoryObj<typeof Button> = {
+  args: {
+    icon: <AddShoppingCart />,
+    size: 'small'
+  }
+}
+
+export const AsLink: StoryObj<typeof Button> = {
+  args: {
+    children: 'Click me',
+    as: 'a',
+    href: '/link'
+  }
+}

@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '../button/Button'
+import { Ribbon, RibbonTypes } from '../ribbon/Ribbon'
 import * as S from './Banner.styles'
 
 export type BannerProps = {
@@ -9,6 +10,7 @@ export type BannerProps = {
   subTitle: string
   buttonLabel: string
   buttonLink: string
+  ribbon?: RibbonTypes
 }
 
 export function Banner({
@@ -16,11 +18,17 @@ export function Banner({
   subTitle,
   img,
   buttonLabel,
-  buttonLink
+  buttonLink,
+  ribbon
 }: BannerProps) {
   return (
     <S.BannerContainer>
       <S.Image src={img} role="img" aria-label={title} />
+      {!!ribbon && (
+        <Ribbon color={ribbon.color} size={ribbon.size}>
+          {ribbon.name}
+        </Ribbon>
+      )}
 
       <S.Caption>
         <S.Title>{title}</S.Title>

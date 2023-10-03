@@ -28,7 +28,7 @@ export const themes = {
     white: '#FAFAFA',
     black: '#030517',
     lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
+    gray: '#BBBBBB',
     darkGray: '#2E2F42'
   },
   spacings: {

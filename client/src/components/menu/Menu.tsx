@@ -10,7 +10,7 @@ import {
 import { Logo } from '@/components/logo/Logo'
 import * as S from './Menu.styles'
 import { Button } from '../button/Button'
-import { MediaMatch } from '../mediamatch/MediaMatch'
+import { MediaMatch } from '../media-match/MediaMatch'
 
 export type MenuProps = {
   username?: string

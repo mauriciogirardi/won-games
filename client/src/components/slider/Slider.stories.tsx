@@ -31,7 +31,7 @@ const Card = ({ value }: CardProps) => (
 )
 
 const settings: SliderSettings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 3,

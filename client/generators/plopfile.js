@@ -14,22 +14,22 @@ module.exports = (
     actions: [
       {
         type: 'add',
-        path: '../src/components/{{lowerCase name}}/{{pascalCase name}}.tsx',
+        path: '../src/components/{{dashCase name}}/{{pascalCase name}}.tsx',
         templateFile: 'templates/component.tsx.hbs'
       },
       {
         type: 'add',
-        path: '../src/components/{{lowerCase name}}/{{pascalCase name}}.styles.ts',
+        path: '../src/components/{{dashCase name}}/{{pascalCase name}}.styles.ts',
         templateFile: 'templates/styles.ts.hbs'
       },
       {
         type: 'add',
-        path: '../src/components/{{lowerCase name}}/{{pascalCase name}}.stories.tsx',
+        path: '../src/components/{{dashCase name}}/{{pascalCase name}}.stories.tsx',
         templateFile: 'templates/stories.tsx.hbs'
       },
       {
         type: 'add',
-        path: '../src/components/{{lowerCase name}}/{{pascalCase name}}.test.tsx',
+        path: '../src/components/{{dashCase name}}/{{pascalCase name}}.test.tsx',
         templateFile: 'templates/test.tsx.hbs'
       }
     ]

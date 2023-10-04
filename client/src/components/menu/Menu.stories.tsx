@@ -5,7 +5,7 @@ export default {
   title: 'Menu',
   component: Menu,
   parameters: {
-    background: {
+    backgrounds: {
       default: 'dark'
     }
   }

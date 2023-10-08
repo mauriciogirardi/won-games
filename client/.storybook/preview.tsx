@@ -6,7 +6,7 @@ import { themes } from '../src/styles/themes'
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={themes}>
-      <GlobalStyles />
+      <GlobalStyles removeBg />
       <Story />
     </ThemeProvider>
   )
@@ -19,6 +19,18 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/
     }
+  },
+  backgrounds: {
+    default: 'won-light',
+    values: [
+      {
+        name: 'won-light',
+        value: themes.colors.white
+      },
+      {
+        name: 'won-dark',
+        value: themes.colors.mainBg
+      }
+    ]
   }
-  // layout: 'fullscreen'
 }

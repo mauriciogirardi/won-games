@@ -1,3 +1,4 @@
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 import styled, { css } from 'styled-components'
 import media, { DefaultBreakpoints } from 'styled-media-query'
 
@@ -22,7 +23,9 @@ const mediaMatchModifiers = {
   `
 }
 
-export const MediaMatch = styled.div<MediaMatchProps>`
+export const MediaMatch = styled('div').withConfig(
+  shouldForwardProps(['lessThan', 'greaterThan'])
+)<MediaMatchProps>`
   ${({ lessThan, greaterThan }) => css`
     display: none;
 

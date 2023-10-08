@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import { LogoProps } from './Logo'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 const wrapperModifiers = {
   large: () => css`
@@ -29,7 +30,9 @@ const wrapperModifiers = {
   `
 }
 
-export const LogoContainer = styled.div<LogoProps>`
+export const LogoContainer = styled('div').withConfig(
+  shouldForwardProps(['color', 'size', 'hideOnMobile'])
+)<LogoProps>`
   ${({ theme, color, size, hideOnMobile }) => css`
     color: ${theme.colors[color!]};
     ${wrapperModifiers[size!]};

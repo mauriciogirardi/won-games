@@ -3,9 +3,11 @@ import type { Metadata } from 'next'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'Boilerplate V2',
-  description:
-    'Boilerplate created with NextJS, App Routes, Jest, Husky and Storybook'
+  title: 'Won Games',
+  description: 'The best Game Stores in the world!',
+  colorScheme: 'dark',
+  icons: '/img/logo.png',
+  keywords: 'Games, Actions'
 }
 
 export default function RootLayout({
@@ -14,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
+    <html lang="en">
       <body>
         <StyledComponentsRegistry>
           <Providers>{children}</Providers>

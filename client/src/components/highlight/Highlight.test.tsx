@@ -2,48 +2,42 @@ import { screen } from '@testing-library/react'
 import { Highlight } from './Highlight'
 import { renderWithTheme } from '@/utils/tests/helpers'
 import { Content } from './Highlight.styles'
-
-const props = {
-  title: 'Heading 1',
-  subtitle: 'Heading 2',
-  buttonLabel: 'Buy now',
-  buttonLink: '/rdr2',
-  backgroundImage: '/img/red-dead-img.jpg'
-}
+import { initialProps } from './mocks'
 
 describe('<Highlight />', () => {
   it('should render the headings and button', () => {
-    renderWithTheme(<Highlight {...props} />)
+    renderWithTheme(<Highlight {...initialProps} />)
 
     expect(
-      screen.getByRole('heading', { name: /Heading 1/i })
+      screen.getByRole('heading', { name: /Read Dead it's back/i })
     ).toBeInTheDocument()
     expect(
-      screen.getByRole('heading', { name: /Heading 2/i })
+      screen.getByRole('heading', { name: /Come see John's new adventures/i })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: /buy now/i })).toBeInTheDocument()
   })
 
   it('should render background image', () => {
-    const { container } = renderWithTheme(<Highlight {...props} />)
+    const { container } = renderWithTheme(<Highlight {...initialProps} />)
 
     expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
+      backgroundImage: `url(${initialProps.backgroundImage})`
     })
   })
 
   it('should render float image', () => {
-    renderWithTheme(<Highlight {...props} floatImage="/float0image.png" />)
-
-    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
-      'src',
-      '/float0image.png'
+    renderWithTheme(
+      <Highlight {...initialProps} floatImage="/float0image.png" />
     )
+
+    expect(
+      screen.getByRole('img', { name: initialProps.title })
+    ).toHaveAttribute('src', '/float0image.png')
   })
 
   it('should render align right by default', () => {
-    const { container } = renderWithTheme(<Highlight {...props} />)
+    const { container } = renderWithTheme(<Highlight {...initialProps} />)
 
     expect(container.firstChild).toHaveStyleRule(
       'grid-template-areas',
@@ -57,7 +51,7 @@ describe('<Highlight />', () => {
 
   it('should render align left', () => {
     const { container } = renderWithTheme(
-      <Highlight {...props} alignment="left" />
+      <Highlight {...initialProps} alignment="left" />
     )
 
     expect(container.firstChild).toHaveStyleRule(

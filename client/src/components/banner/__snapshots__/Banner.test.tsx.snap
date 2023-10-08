@@ -104,7 +104,6 @@ exports[`<Banner /> should render correctly 1`] = `
     aria-label="Defy death"
     class="c1"
     role="img"
-    src="https://source.unsplash.com/user/mauriciogirardi/1042x580"
   />
   <div
     class="c2"

@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import styled from 'styled-components'
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 const wrapperModifier = {
@@ -46,7 +45,9 @@ export const MenuGroup = styled.div`
   `}
 `
 
-export const MenuFull = styled.nav<{ isOpen: boolean }>`
+export const MenuFull = styled('nav').withConfig({
+  shouldForwardProp: (prop) => !['isOpen'].includes(prop)
+})<{ isOpen: boolean }>`
   ${({ isOpen, theme }) => css`
     display: flex;
     flex-direction: column;
@@ -55,6 +56,8 @@ export const MenuFull = styled.nav<{ isOpen: boolean }>`
     position: absolute;
     overflow: hidden;
     inset: 0;
+    position: fixed;
+    z-index: ${theme.layers.menu};
 
     height: 100vh;
     opacity: ${isOpen ? 1 : 0};

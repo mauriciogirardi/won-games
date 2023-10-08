@@ -30,7 +30,7 @@ export const Column = styled.div`
       width: max-content;
       color: ${theme.colors.gray};
       text-decoration: none;
-      margin-top: ${theme.spacings.xxsmall};
+      margin-bottom: ${theme.spacings.xxsmall};
       font-size: ${theme.font.sizes.small};
       position: relative;
     }

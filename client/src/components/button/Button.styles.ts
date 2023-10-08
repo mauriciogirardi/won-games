@@ -1,6 +1,7 @@
 import styled, { DefaultTheme } from 'styled-components'
 import { ButtonProps } from './Button'
 import { css } from 'styled-components'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 type ButtonContainerProps = {
   hasIcon: boolean
@@ -39,7 +40,9 @@ const wrapperModifier = {
   `
 }
 
-export const ButtonContainer = styled.button<ButtonContainerProps>`
+export const ButtonContainer = styled('button').withConfig(
+  shouldForwardProps(['size', 'fullWidth', 'hasIcon'])
+)<ButtonContainerProps>`
   ${({ size, theme, fullWidth, hasIcon }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     border-radius: ${theme.border.radius};

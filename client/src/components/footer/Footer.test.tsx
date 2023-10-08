@@ -6,7 +6,7 @@ describe('<Footer />', () => {
   it('should render 4 columns topics', () => {
     renderWithTheme(<Footer />)
 
-    const column1 = screen.getByRole('heading', { name: /contact/i })
+    const column1 = screen.getByRole('heading', { name: /contact us/i })
     const column2 = screen.getByRole('heading', { name: /follow us/i })
     const column3 = screen.getByRole('heading', { name: /links/i })
     const column4 = screen.getByRole('heading', { name: /location/i })

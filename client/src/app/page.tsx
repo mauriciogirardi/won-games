@@ -1,7 +1,24 @@
-export default function Home() {
+import { useBannerSlider } from '@/hooks/useBannerSlider'
+import { useGames } from '@/hooks/useGames'
+import { useHighlight } from '@/hooks/useHighlight'
+import { Home } from '@/templates/home/Home'
+
+export default function App() {
+  const { banners } = useBannerSlider()
+  const { games } = useGames()
+  const { highlight } = useHighlight()
+
   return (
-    <main className="bg-blue h-screen flex justify-center center items-center px-4">
-      <p>Home</p>
-    </main>
+    <Home
+      banners={banners}
+      freeGames={games}
+      newGames={games}
+      upcomingMoreGames={games}
+      mostPopularGames={games}
+      upcomingGames={games}
+      freeGamesHighlight={highlight}
+      mostPopularHighlight={highlight}
+      upcomingHighlight={highlight}
+    />
   )
 }

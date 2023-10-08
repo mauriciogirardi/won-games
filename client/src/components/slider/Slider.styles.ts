@@ -1,17 +1,17 @@
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 import styled from 'styled-components'
 
-export const SliderContainer = styled.section`
+export const SliderContainer = styled('section').withConfig(
+  shouldForwardProps(['currentSlide', 'slideCount'])
+)`
   .slick-slider {
     position: relative;
-
     display: block;
     box-sizing: border-box;
-
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -ms-touch-action: pan-y;
@@ -21,10 +21,8 @@ export const SliderContainer = styled.section`
 
   .slick-list {
     position: relative;
-
     display: block;
     overflow: hidden;
-
     margin: 0;
     padding: 0;
   }
@@ -49,13 +47,11 @@ export const SliderContainer = styled.section`
     position: relative;
     top: 0;
     left: 0;
-
     display: block;
   }
   .slick-track:before,
   .slick-track:after {
     display: table;
-
     content: '';
   }
   .slick-track:after {
@@ -68,9 +64,8 @@ export const SliderContainer = styled.section`
   .slick-slide {
     display: none;
     float: left;
-
     height: 100%;
-    min-height: 1px;
+    min-height: 0.1rem;
   }
   [dir='rtl'] .slick-slide {
     float: right;
@@ -92,10 +87,8 @@ export const SliderContainer = styled.section`
   }
   .slick-vertical .slick-slide {
     display: block;
-
     height: auto;
-
-    border: 1px solid transparent;
+    border: 0.1rem solid transparent;
   }
   .slick-arrow.slick-hidden {
     display: none;

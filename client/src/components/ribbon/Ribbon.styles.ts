@@ -1,6 +1,7 @@
 import styled, { DefaultTheme, css } from 'styled-components'
 import { ColorTypes, RibbonProps } from './Ribbon'
 import { darken } from 'polished'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 const wrapperModifier = {
   color: (theme: DefaultTheme, color: ColorTypes) => css`
@@ -39,7 +40,9 @@ const wrapperModifier = {
   `
 }
 
-export const RibbonContainer = styled.div<Omit<RibbonProps, 'children'>>`
+export const RibbonContainer = styled('div').withConfig(
+  shouldForwardProps(['color', 'size'])
+)<Omit<RibbonProps, 'children'>>`
   ${({ theme, color, size }) => css`
     color: ${theme.colors.white};
     font-weight: ${theme.font.bold};

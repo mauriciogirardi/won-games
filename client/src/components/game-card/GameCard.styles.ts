@@ -1,3 +1,4 @@
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 import { darken } from 'polished'
 import styled, { DefaultTheme, css } from 'styled-components'
 
@@ -23,7 +24,7 @@ const wrapperModifier = {
 
 export const GameCardContainer = styled.article`
   ${({ theme }) => css`
-    box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2); */
     position: relative;
     background-color: ${theme.colors.white};
     width: 100%;
@@ -121,7 +122,9 @@ export const BuyBox = styled.div`
   gap: 0.3rem;
 `
 
-export const Price = styled.div<PriceProps>`
+export const Price = styled('div').withConfig(
+  shouldForwardProps(['isPromotional'])
+)<PriceProps>`
   ${({ theme, isPromotional }) => css`
     font-weight: ${theme.font.bold};
 

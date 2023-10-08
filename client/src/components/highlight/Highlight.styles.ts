@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { HighlightProps } from './Highlight'
 import media from 'styled-media-query'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 type HighlightContainerProps = Pick<
   HighlightProps,
@@ -31,7 +32,9 @@ const wrapperModifiers = {
   `
 }
 
-export const HighlightContainer = styled.section<HighlightContainerProps>`
+export const HighlightContainer = styled('section').withConfig(
+  shouldForwardProps(['backgroundImage', 'alignment'])
+)<HighlightContainerProps>`
   ${({ backgroundImage, alignment }) => css`
     position: relative;
     display: grid;

@@ -1,10 +1,13 @@
 import styled, { css } from 'styled-components'
 import { GameCardSliderProps } from './GameCardSlider'
 import media from 'styled-media-query'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 type GameCardSliderContainerProps = Pick<GameCardSliderProps, 'color'>
 
-export const GameCardSliderContainer = styled.section<GameCardSliderContainerProps>`
+export const GameCardSliderContainer = styled('section').withConfig(
+  shouldForwardProps(['color', 'slideCount', 'currentSlide'])
+)<GameCardSliderContainerProps>`
   ${({ theme, color }) => css`
     ${media.lessThan('huge')`
       overflow-x: hidden;
@@ -41,18 +44,9 @@ export const GameCardSliderContainer = styled.section<GameCardSliderContainerPro
       cursor: pointer;
       position: absolute;
       top: 50%;
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0;
+      width: 2.2rem;
+      height: 2.2rem;
       transform: translate(0, -50%);
-      background-color: ${theme.colors.white};
-      border-radius: 50%;
-      padding: 0.5rem;
-      opacity: 0.6;
-
-      &:hover {
-        opacity: 0.9;
-      }
     }
 
     .slick-prev {

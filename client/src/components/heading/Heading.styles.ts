@@ -1,6 +1,7 @@
 import styled, { DefaultTheme, css } from 'styled-components'
 import media from 'styled-media-query'
 import { HeadingProps, LineColorType } from './Heading'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 const wrapperModifiers = {
   lineLeft: (theme: DefaultTheme, lineColor: LineColorType) => css`
@@ -40,7 +41,9 @@ const wrapperModifiers = {
   `
 }
 
-export const HeadingContainer = styled.h2<HeadingProps>`
+export const HeadingContainer = styled('h2').withConfig(
+  shouldForwardProps(['color', 'lineLeft', 'size', 'lineBottom', 'lineColor'])
+)<HeadingProps>`
   ${({ theme, color, lineLeft, lineBottom, size, lineColor }) => css`
     color: ${theme.colors[color!]};
 

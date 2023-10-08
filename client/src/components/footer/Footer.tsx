@@ -13,7 +13,7 @@ export function Footer() {
       <S.Content>
         <S.Column>
           <Heading color="black" size="small" lineBottom lineColor="secondary">
-            CONTACT
+            CONTACT US
           </Heading>
 
           <a href="mailto:maurigirarde@yahoo.com.br">sac@wongames.com</a>

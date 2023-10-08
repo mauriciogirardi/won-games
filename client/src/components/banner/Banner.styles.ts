@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import { RibbonContainer } from '@/components/ribbon/Ribbon.styles'
+import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
 
 type ImageProps = {
   src: string
@@ -24,7 +25,9 @@ export const BannerContainer = styled.main`
   `}
 `
 
-export const Image = styled.div<ImageProps>`
+export const Image = styled('div').withConfig(
+  shouldForwardProps(['src'])
+)<ImageProps>`
   ${({ theme, src }) => css`
     width: 100%;
     height: 23rem;

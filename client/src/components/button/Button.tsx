@@ -15,6 +15,7 @@ type ButtonTypes =
 export type ButtonProps = {
   size?: 'small' | 'medium' | 'large'
   fullWidth?: boolean
+  minimal?: boolean
   icon?: ReactNode
   as?: ElementType
 } & ButtonTypes
@@ -23,6 +24,7 @@ export function Button({
   children,
   size = 'medium',
   fullWidth = false,
+  minimal = false,
   icon,
   ...props
 }: ButtonProps) {
@@ -30,6 +32,7 @@ export function Button({
     <S.ButtonContainer
       size={size}
       fullWidth={fullWidth}
+      minimal={minimal}
       hasIcon={!!icon}
       {...props}
     >

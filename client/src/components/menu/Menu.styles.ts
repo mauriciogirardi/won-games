@@ -118,7 +118,6 @@ export const MenuLink = styled(Link)`
       &::after {
         content: '';
         position: absolute;
-        bottom: 0;
         left: 0;
         display: block;
         height: 0.3rem;

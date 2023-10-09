@@ -67,7 +67,7 @@ exports[`<Slider /> should render children as slider item 1`] = `
   display: none;
   float: left;
   height: 100%;
-  min-height: 1px;
+  min-height: 0.1rem;
 }
 
 .c0 [dir='rtl'] .slick-slide {
@@ -97,7 +97,7 @@ exports[`<Slider /> should render children as slider item 1`] = `
 .c0 .slick-vertical .slick-slide {
   display: block;
   height: auto;
-  border: 1px solid transparent;
+  border: 0.1rem solid transparent;
 }
 
 .c0 .slick-arrow.slick-hidden {

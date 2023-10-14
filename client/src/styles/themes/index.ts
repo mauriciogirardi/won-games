@@ -6,6 +6,10 @@ export const themes = {
   border: {
     radius: '0.4rem'
   },
+  transition: {
+    fast: '0.1s ease-in-out',
+    default: '0.3s ease-in-out'
+  },
   font: {
     family:
       "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",

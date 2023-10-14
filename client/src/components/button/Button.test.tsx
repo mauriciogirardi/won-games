@@ -80,7 +80,7 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyle({
       background: 'none',
-      color: '#F231A5'
+      color: 'rgb(178, 11, 111)'
     })
 
     expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule(

@@ -4,6 +4,9 @@ import { Checkbox } from './Checkbox'
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  argTypes: {
+    onCheck: { action: 'checked' }
+  },
   parameters: {
     backgrounds: {
       default: 'won-dark'
@@ -15,5 +18,13 @@ export const Default: StoryObj<typeof Checkbox> = {
   args: {
     label: 'John Doe',
     labelFor: 'name'
+  }
+}
+
+export const Checked: StoryObj<typeof Checkbox> = {
+  args: {
+    label: 'John Doe',
+    labelFor: 'name',
+    isChecked: true
   }
 }

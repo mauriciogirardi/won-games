@@ -64,7 +64,7 @@ export const MenuFull = styled('nav').withConfig({
     background: ${theme.colors.white};
     pointer-events: ${isOpen ? 'all' : 'none'};
 
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity ${theme.transition.default};
 
     > svg {
       width: 2.4rem;

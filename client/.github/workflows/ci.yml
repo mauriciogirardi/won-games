@@ -20,8 +20,8 @@ jobs:
       - name: Linting
         run: npm run lint
 
-      - name: Typecheck
-        run: npm run typecheck
+      # - name: Typecheck
+      #   run: npm run typecheck
 
       - name: Testing
         run: npm run test

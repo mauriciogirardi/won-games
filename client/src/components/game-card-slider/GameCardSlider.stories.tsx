@@ -3,7 +3,7 @@ import { GameCardSlider } from './GameCardSlider'
 import { items } from './mock'
 
 export default {
-  title: 'GameCardSlider',
+  title: 'Card/GameCardSlider',
   component: GameCardSlider,
   decorators: [
     (Story) => (

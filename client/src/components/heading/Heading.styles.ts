@@ -38,6 +38,12 @@ const wrapperModifiers = {
       width: 3rem;
       bottom: -0.5rem;
     }
+  `,
+
+  huge: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.huge};
+    line-height: 120%;
+    letter-spacing: -0.08125rem;
   `
 }
 

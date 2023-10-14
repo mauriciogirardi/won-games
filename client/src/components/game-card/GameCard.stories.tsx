@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { GameCard } from './GameCard'
 
 export default {
-  title: 'GameCard',
+  title: 'Card/GameCard',
   component: GameCard,
   decorators: [
     (Story) => (

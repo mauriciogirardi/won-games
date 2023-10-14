@@ -35,6 +35,11 @@ describe('<Logo />', () => {
     })
   })
 
+  it('should render the logo with id passed', () => {
+    const { container } = renderWithTheme(<Logo id="my-id" />)
+    expect(container.querySelector('#a-my-id')).toBeInTheDocument()
+  })
+
   // it('should render a bigger logo without text if hideOnMobile', () => {
   //   const { debug } = renderWithTheme(<Logo hideOnMobile />)
 

@@ -60,5 +60,6 @@ export const Label = styled('label').withConfig(
   ${({ theme, labelColor }) => css`
     color: ${theme.colors[labelColor!]};
     line-height: 1;
+    cursor: pointer;
   `}
 `

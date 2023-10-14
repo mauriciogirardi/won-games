@@ -34,7 +34,8 @@ export const themes = {
     black: '#030517',
     lightGray: '#EAEAEA',
     gray: '#BBBBBB',
-    darkGray: '#2E2F42'
+    darkGray: '#2E2F42',
+    red: '#FF6347'
   },
   spacings: {
     xxsmall: '0.8rem',

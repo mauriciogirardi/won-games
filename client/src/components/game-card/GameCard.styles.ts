@@ -28,7 +28,6 @@ export const GameCardContainer = styled.article`
     position: relative;
     background-color: ${theme.colors.white};
     width: 100%;
-    height: 100%;
   `}
 `
 
@@ -120,6 +119,7 @@ export const BuyBox = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 0.3rem;
+  margin-top: 1rem;
 `
 
 export const Price = styled('div').withConfig(

@@ -69,6 +69,7 @@ export const MenuFull = styled('nav').withConfig({
     > svg {
       width: 2.4rem;
       height: 2.4rem;
+      color: ${theme.colors.black};
       margin: ${theme.spacings.xsmall};
       cursor: pointer;
       position: absolute;

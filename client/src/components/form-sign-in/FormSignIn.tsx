@@ -6,6 +6,7 @@ import * as S from './FormSignIn.styles'
 import { Button } from '../button/Button'
 import Link from 'next/link'
 import { FormContainer, FormLink } from '../form/Form'
+import { PATH_SIGN_UP } from '@/constants/paths'
 
 export function FormSignIn() {
   return (
@@ -32,7 +33,7 @@ export function FormSignIn() {
 
         <FormLink>
           {"Don't have an account? "}
-          <Link href="auth/sign-up">Sign up</Link>
+          <Link href={PATH_SIGN_UP}>Sign up</Link>
         </FormLink>
       </form>
     </FormContainer>

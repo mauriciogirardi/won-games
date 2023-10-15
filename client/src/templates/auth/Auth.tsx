@@ -4,6 +4,8 @@ import { Logo } from '@/components/logo/Logo'
 import * as S from './Auth.styles'
 import { Heading } from '@/components/heading/Heading'
 import { ReactNode } from 'react'
+import Link from 'next/link'
+import { PATH_HOME } from '@/constants/paths'
 
 export type AuthProps = {
   children: ReactNode
@@ -15,7 +17,9 @@ export function Auth({ children, title }: AuthProps) {
     <S.AuthContainer>
       <S.BannerBlock>
         <S.BannerContent>
-          <Logo id="logo-banner" />
+          <Link href={PATH_HOME}>
+            <Logo id="logo-banner" />
+          </Link>
 
           <S.WrapperTitles>
             <Heading color="white" size="huge">
@@ -33,7 +37,9 @@ export function Auth({ children, title }: AuthProps) {
 
       <S.Content>
         <S.ContentWrapper>
-          <Logo id="logo-form" color="black" size="large" />
+          <Link href={PATH_HOME}>
+            <Logo id="logo-form" color="black" size="large" />
+          </Link>
           <Heading color="black" lineColor="secondary" lineLeft>
             {title}
           </Heading>

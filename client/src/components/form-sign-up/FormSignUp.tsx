@@ -6,6 +6,7 @@ import { TextField } from '../text-field/TextField'
 import { Button } from '../button/Button'
 import { FormLink, FormContainer } from '../form/Form'
 import Link from 'next/link'
+import { PATH_SIGN_IN } from '@/constants/paths'
 
 export function FormSignUp() {
   return (
@@ -41,7 +42,7 @@ export function FormSignUp() {
         </Button>
 
         <FormLink>
-          Already have an account? <Link href="auth/sign-in">Sign in</Link>
+          Already have an account? <Link href={PATH_SIGN_IN}>Sign in</Link>
         </FormLink>
       </form>
     </FormContainer>

@@ -11,6 +11,8 @@ import { Logo } from '@/components/logo/Logo'
 import * as S from './Menu.styles'
 import { Button } from '../button/Button'
 import { MediaMatch } from '../media-match/MediaMatch'
+import Link from 'next/link'
+import { PATH_HOME, PATH_SIGN_IN, PATH_SIGN_UP } from '@/constants/paths'
 
 export type MenuProps = {
   username?: string
@@ -36,7 +38,7 @@ export function Menu({ username }: MenuProps) {
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="/">Home</S.MenuLink>
+          <S.MenuLink href={PATH_HOME}>Home</S.MenuLink>
           <S.MenuLink href="/">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
@@ -52,7 +54,9 @@ export function Menu({ username }: MenuProps) {
 
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button>Sign in</Button>
+            <Link href={PATH_SIGN_IN} passHref>
+              <Button>Sign in</Button>
+            </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -61,7 +65,7 @@ export function Menu({ username }: MenuProps) {
         <CloseIcon aria-label="Close Menu" onClick={handleCloseMenu} />
 
         <S.MenuNav>
-          <S.MenuLink href="/">Home</S.MenuLink>
+          <S.MenuLink href={PATH_HOME}>Home</S.MenuLink>
           <S.MenuLink href="/">Explore</S.MenuLink>
 
           {!!username && (
@@ -74,11 +78,13 @@ export function Menu({ username }: MenuProps) {
 
         {!username && (
           <S.RegisterBox>
-            <Button fullWidth size="medium">
-              Login in now
-            </Button>
+            <Link href={PATH_SIGN_IN} passHref>
+              <Button fullWidth size="medium">
+                Login in now
+              </Button>
+            </Link>
             <span>or</span>
-            <S.CreateAccount href="/" title="Sign Up">
+            <S.CreateAccount href={PATH_SIGN_UP} title="Sign Up">
               Sign Up
             </S.CreateAccount>
           </S.RegisterBox>

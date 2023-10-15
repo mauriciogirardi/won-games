@@ -5,13 +5,15 @@ export const items: GameCardProps[] = [
     img: 'https://source.unsplash.com/user/willianjusten/1042x580',
     title: 'Defy death 1',
     price: '$215.00',
-    developer: 'Rackstar Games'
+    developer: 'Rackstar Games',
+    promotionalPrice: '$150.00'
   },
   {
     img: 'https://source.unsplash.com/user/willianjusten/1042x580',
     title: 'Defy death 4',
     price: '$215.00',
-    developer: 'Rackstar Games'
+    developer: 'Rackstar Games',
+    promotionalPrice: '$150.00'
   },
   {
     img: 'https://source.unsplash.com/user/willianjusten/1042x580',

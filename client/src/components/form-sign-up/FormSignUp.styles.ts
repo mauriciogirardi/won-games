@@ -1,10 +1,9 @@
-import Link from 'next/link'
+import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 import { TextFieldContainer } from '../text-field/TextField.styles'
 import { ButtonContainer } from '../button/Button.styles'
-import { darken, lighten } from 'polished'
 
-export const FormSignInContainer = styled.div`
+export const FormSignUpContainer = styled.div`
   ${({ theme }) => css`
     ${TextFieldContainer} {
       margin: ${theme.spacings.xxsmall} 0;
@@ -12,21 +11,6 @@ export const FormSignInContainer = styled.div`
 
     ${ButtonContainer} {
       margin: ${theme.spacings.medium} auto ${theme.spacings.xsmall};
-    }
-  `}
-`
-
-export const ForgetPassword = styled(Link)`
-  ${({ theme }) => css`
-    text-align: right;
-    display: block;
-    color: ${theme.colors.black};
-    font-size: ${theme.font.sizes.small};
-    transition: color, ${theme.transition.fast};
-    text-decoration: none;
-
-    &:hover {
-      color: ${lighten(0.2, theme.colors.black)};
     }
   `}
 `
@@ -47,6 +31,7 @@ export const FormLink = styled.div`
       &:focus {
         color: ${darken(0.1, theme.colors.secondary)};
       }
+
       &:hover {
         color: ${darken(0.1, theme.colors.secondary)};
         border-color: ${darken(0.1, theme.colors.secondary)};

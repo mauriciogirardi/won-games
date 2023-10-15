@@ -66,11 +66,16 @@ export const ButtonContainer = styled('button').withConfig(
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    outline: none;
 
     ${!!size && wrapperModifier[size](theme)}
     ${!!hasIcon && wrapperModifier.withIcon(theme)}
     ${!!fullWidth && wrapperModifier.fullWidth()}
     ${!!minimal && wrapperModifier.minimal(theme)}
+
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.primary};
+    }
 
     &:hover {
       background: ${minimal

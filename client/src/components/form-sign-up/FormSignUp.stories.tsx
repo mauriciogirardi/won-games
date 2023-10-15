@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { FormSignIn } from './FormSignIn'
+import { FormSignUp } from './FormSignUp'
 import { Center } from '@/utils/stories/Center'
 
 export default {
-  title: 'Form/FormSignIn',
-  component: FormSignIn,
+  title: 'Form/FormSignUp',
+  component: FormSignUp,
   decorators: [
     (Story) => (
       <Center>
@@ -14,4 +14,4 @@ export default {
   ]
 } as Meta
 
-export const Default: StoryObj<typeof FormSignIn> = {}
+export const Default: StoryObj<typeof FormSignUp> = {}

@@ -3,13 +3,13 @@
 import { Email, Lock } from 'styled-icons/material-outlined'
 import { UserCircle } from 'styled-icons/boxicons-regular'
 import { TextField } from '../text-field/TextField'
-import * as S from './FormSignUp.styles'
 import { Button } from '../button/Button'
+import { FormLink, FormContainer } from '../form/Form'
 import Link from 'next/link'
 
 export function FormSignUp() {
   return (
-    <S.FormSignUpContainer>
+    <FormContainer>
       <form>
         <TextField
           name="name"
@@ -40,10 +40,10 @@ export function FormSignUp() {
           Sign up now
         </Button>
 
-        <S.FormLink>
+        <FormLink>
           Already have an account? <Link href="auth/sign-in">Sign in</Link>
-        </S.FormLink>
+        </FormLink>
       </form>
-    </S.FormSignUpContainer>
+    </FormContainer>
   )
 }

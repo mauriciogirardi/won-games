@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { TextFieldContainer } from '../text-field/TextField.styles'
 import { ButtonContainer } from '../button/Button.styles'
 
-export const FormSignUpContainer = styled.div`
+export const FormContainer = styled.div`
   ${({ theme }) => css`
     ${TextFieldContainer} {
       margin: ${theme.spacings.xxsmall} 0;

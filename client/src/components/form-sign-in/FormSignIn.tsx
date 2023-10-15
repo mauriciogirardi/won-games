@@ -5,10 +5,11 @@ import { TextField } from '../text-field/TextField'
 import * as S from './FormSignIn.styles'
 import { Button } from '../button/Button'
 import Link from 'next/link'
+import { FormContainer, FormLink } from '../form/Form'
 
 export function FormSignIn() {
   return (
-    <S.FormSignInContainer>
+    <FormContainer>
       <form>
         <TextField
           name="email"
@@ -29,11 +30,11 @@ export function FormSignIn() {
           Sign in now
         </Button>
 
-        <S.FormLink>
+        <FormLink>
           {"Don't have an account? "}
           <Link href="auth/sign-up">Sign up</Link>
-        </S.FormLink>
+        </FormLink>
       </form>
-    </S.FormSignInContainer>
+    </FormContainer>
   )
 }

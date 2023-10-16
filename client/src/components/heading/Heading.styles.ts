@@ -16,11 +16,17 @@ const wrapperModifiers = {
     &::after {
       content: '';
       position: absolute;
-      bottom: -1rem;
+      bottom: -0.5rem;
       left: 0;
       width: 5rem;
       border-bottom: 0.5rem solid ${theme.colors[lineColor]};
     }
+
+    ${media.lessThan('medium')`
+      &::after {
+        border-bottom: 0.4rem solid ${theme.colors[lineColor]};
+      }
+    `}
   `,
 
   medium: (theme: DefaultTheme) => css`

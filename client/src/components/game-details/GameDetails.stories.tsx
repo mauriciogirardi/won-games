@@ -20,5 +20,5 @@ export default {
 } as Meta
 
 export const Default: StoryObj<typeof GameDetails> = {
-  args: mockGameDetails
+  args: { ...mockGameDetails, releaseDate: '2023-10-21T23:00:00' }
 }

@@ -21,6 +21,7 @@ export default {
 
 export const Default: StoryObj<typeof Heading> = {
   args: {
-    children: 'Most Popular'
+    children: 'Most Popular',
+    color: 'white'
   }
 }

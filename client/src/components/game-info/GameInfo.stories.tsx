@@ -6,11 +6,6 @@ import { Center } from '@/utils/stories/Center'
 export default {
   title: 'GameInfo',
   component: GameInfo,
-  parameters: {
-    backgrounds: {
-      default: 'won-dark'
-    }
-  },
   decorators: [
     (Story) => (
       <Center>

@@ -36,7 +36,10 @@ export const themes = {
     lightGray: '#EAEAEA',
     gray: '#BBBBBB',
     darkGray: '#2E2F42',
-    red: '#FF6347'
+    red: '#FF6347',
+    green: '#30AE2E',
+    orange: '#CE7D17',
+    transparent: 'transparent'
   },
   spacings: {
     xxsmall: '0.8rem',

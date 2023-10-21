@@ -5,6 +5,11 @@ import { Center } from '@/utils/stories/Center'
 export default {
   title: 'Form/FormSignUp',
   component: FormSignUp,
+  parameters: {
+    backgrounds: {
+      default: 'won-light'
+    }
+  },
   decorators: [
     (Story) => (
       <Center>

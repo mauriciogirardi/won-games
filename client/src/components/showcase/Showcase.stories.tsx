@@ -7,10 +7,7 @@ export default {
   title: 'Showcase',
   component: Showcase,
   parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'won-dark'
-    }
+    layout: 'fullscreen'
   },
   decorators: [
     (Story) => (

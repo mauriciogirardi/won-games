@@ -6,10 +6,7 @@ export default {
   title: 'BannerSlider',
   component: BannerSlider,
   parameters: {
-    layout: 'fullscreen',
-    backgrounds: {
-      default: 'won-dark'
-    }
+    layout: 'fullscreen'
   },
   decorators: [
     (Story) => (

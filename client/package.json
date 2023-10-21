@@ -10,6 +10,7 @@
     "prepare": "husky install",
     "test": "jest --passWithNoTests --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
+    "test:coverage": "open coverage/lcov-report/index.html",
     "test:ci": "jest --runInBand",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

@@ -21,7 +21,7 @@ export const parameters = {
     }
   },
   backgrounds: {
-    default: 'won-light',
+    default: 'won-dark',
     values: [
       {
         name: 'won-light',

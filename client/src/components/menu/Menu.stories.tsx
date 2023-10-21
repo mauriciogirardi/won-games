@@ -3,12 +3,7 @@ import { Menu } from './Menu'
 
 export default {
   title: 'Menu',
-  component: Menu,
-  parameters: {
-    backgrounds: {
-      default: 'won-dark'
-    }
-  }
+  component: Menu
 } as Meta
 
 export const Default: StoryObj<typeof Menu> = {}

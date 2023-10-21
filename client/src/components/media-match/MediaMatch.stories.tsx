@@ -13,7 +13,7 @@ export const Desktop: StoryObj<MediaMatchProps> = {
   decorators: [
     () => (
       <MediaMatch greaterThan="medium">
-        <h1>Only On Desktop</h1>
+        <h1 style={{ color: '#fff' }}>Only On Desktop</h1>
       </MediaMatch>
     )
   ]
@@ -26,7 +26,7 @@ export const Mobile: StoryObj<MediaMatchProps> = {
   decorators: [
     () => (
       <MediaMatch lessThan="medium">
-        <h1>Only On Mobile</h1>
+        <h1 style={{ color: '#fff' }}>Only On Mobile</h1>
       </MediaMatch>
     )
   ],

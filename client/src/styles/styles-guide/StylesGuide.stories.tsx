@@ -1,10 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { themes } from "../themes";
-import * as S from "./StylesGuide.styles";
-import { TypeColors, TypeFontsSizes, TypeSpacing} from './StylesGuide.types';
+import { themes } from '../themes'
+import * as S from './StylesGuide.styles'
+import { TypeColors, TypeFontsSizes, TypeSpacing } from './StylesGuide.types'
 
-function StylesGuide({ type }: { type: 'color' | 'fonts' | 'weight' | 'spacing'}) {
+function StylesGuide({
+  type
+}: {
+  type: 'color' | 'fonts' | 'weight' | 'spacing'
+}) {
   const namesColors = Object.keys(themes.colors) as TypeColors[]
   const fontsNames = Object.keys(themes.font.sizes) as TypeFontsSizes[]
   const fontsWeight = [themes.font.bold, themes.font.light, themes.font.normal]
@@ -12,28 +16,27 @@ function StylesGuide({ type }: { type: 'color' | 'fonts' | 'weight' | 'spacing'}
   const spacingSizes = Object.values(themes.spacings)
   const spacingNames = Object.keys(themes.spacings) as TypeSpacing[]
 
-
   const fonts = fontsNames.map((font, index) => ({
     name: font,
-    size: fontSizes[index],
-  }));
+    size: fontSizes[index]
+  }))
 
   const spacings = spacingNames.map((spacing, index) => ({
     name: spacing,
-    size: spacingSizes[index],
-  }));
+    size: spacingSizes[index]
+  }))
 
   if (type === 'color') {
     return (
       <S.ContainerColor>
         <S.Title>Colors</S.Title>
 
-          {namesColors.map((name) => (
-            <S.Wrapper  key={name}>
-              <S.Colors bg={name}/>
-              <span>{name}</span>
-            </S.Wrapper>
-          ))}
+        {namesColors.map((name) => (
+          <S.Wrapper key={name}>
+            <S.Colors bg={name} />
+            <span>{name}</span>
+          </S.Wrapper>
+        ))}
       </S.ContainerColor>
     )
   }
@@ -43,12 +46,12 @@ function StylesGuide({ type }: { type: 'color' | 'fonts' | 'weight' | 'spacing'}
       <S.ContainerColor>
         <S.Title>Fonts</S.Title>
 
-          {fonts.map((font) => (
-            <S.Wrapper  key={font.name}>
-              <S.Size size={font.size} >Heading</S.Size>
-              <span>{font.name}</span>
-            </S.Wrapper>
-          ))}
+        {fonts.map((font) => (
+          <S.Wrapper key={font.name}>
+            <S.Size size={font.size}>Heading</S.Size>
+            <span>{font.name}</span>
+          </S.Wrapper>
+        ))}
       </S.ContainerColor>
     )
   }
@@ -58,12 +61,12 @@ function StylesGuide({ type }: { type: 'color' | 'fonts' | 'weight' | 'spacing'}
       <S.ContainerColor>
         <S.Title>Weight</S.Title>
 
-          {fontsWeight.map((name) => (
-            <S.Wrapper  key={name}>
-              <S.Weight weight={name}>Heading</S.Weight>
-              <span>{name}</span>
-            </S.Wrapper>
-          ))}
+        {fontsWeight.map((name) => (
+          <S.Wrapper key={name}>
+            <S.Weight weight={name}>Heading</S.Weight>
+            <span>{name}</span>
+          </S.Wrapper>
+        ))}
       </S.ContainerColor>
     )
   }
@@ -73,15 +76,15 @@ function StylesGuide({ type }: { type: 'color' | 'fonts' | 'weight' | 'spacing'}
       <S.ContainerColor>
         <S.Title>Spacings</S.Title>
 
-          {spacings.map((spacing) => (
-            <S.Wrapper  key={spacing.name}>
-              <S.WrapperSpacing>
-                <S.Spacing spacing={spacing.size} />
-                <span>{spacing.size}</span>
-              </S.WrapperSpacing>
-              <span>{spacing.name}</span>
-            </S.Wrapper>
-          ))}
+        {spacings.map((spacing) => (
+          <S.Wrapper key={spacing.name}>
+            <S.WrapperSpacing>
+              <S.Spacing spacing={spacing.size} />
+              <span>{spacing.size}</span>
+            </S.WrapperSpacing>
+            <span>{spacing.name}</span>
+          </S.Wrapper>
+        ))}
       </S.ContainerColor>
     )
   }

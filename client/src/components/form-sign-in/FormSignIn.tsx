@@ -1,12 +1,12 @@
 'use client'
 
 import { Email, Lock } from 'styled-icons/material-outlined'
-import { TextField } from '../text-field/TextField'
-import * as S from './FormSignIn.styles'
-import { Button } from '../button/Button'
 import Link from 'next/link'
-import { FormContainer, FormLink } from '../form/Form'
+import { TextField } from '../text-field/TextField'
+import { Button } from '../button/Button'
 import { PATH_SIGN_UP } from '@/constants/paths'
+import { FormContainer, FormLink } from '../form/Form'
+import * as S from './FormSignIn.styles'
 
 export function FormSignIn() {
   return (

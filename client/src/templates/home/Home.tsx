@@ -1,13 +1,15 @@
 'use client'
 
+import { Suspense } from 'react'
+
 import * as S from './Home.styles'
+import { Showcase } from '@/components/showcase/Showcase'
 import { Container } from '@/components/container/Container'
 import { BannerProps } from '@/components/banner/Banner'
 import { BannerSlider } from '@/components/banner-slider/BannerSlider'
+import { BaseTemplate } from '../base-template/BaseTemplate'
 import { GameCardProps } from '@/components/game-card/GameCard'
 import { HighlightProps } from '@/components/highlight/Highlight'
-import { Showcase } from '@/components/showcase/Showcase'
-import { BaseTemplate } from '../base-template/BaseTemplate'
 
 export type HomeProps = {
   banners: BannerProps[]
@@ -34,31 +36,41 @@ export function Home({
     <BaseTemplate>
       <Container>
         <S.SectionBanner>
-          <BannerSlider items={banners} />
+          <Suspense fallback={<p>Loading Banners</p>}>
+            <BannerSlider items={banners} />
+          </Suspense>
         </S.SectionBanner>
       </Container>
 
       <S.SectionNews>
-        <Showcase title="News" games={newGames} color="black" />
+        <Suspense fallback={<p>Loading New Games</p>}>
+          <Showcase title="News" games={newGames} color="black" />
+        </Suspense>
       </S.SectionNews>
 
-      <Showcase
-        title="Most popular"
-        highlight={mostPopularHighlight}
-        games={mostPopularGames}
-      />
+      <Suspense fallback={<p>Loading Most Popular</p>}>
+        <Showcase
+          title="Most popular"
+          highlight={mostPopularHighlight}
+          games={mostPopularGames}
+        />
+      </Suspense>
 
-      <Showcase
-        title="Upcoming"
-        games={upcomingGames}
-        highlight={upcomingHighlight}
-      />
+      <Suspense fallback={<p>Loading Upcoming</p>}>
+        <Showcase
+          title="Upcoming"
+          games={upcomingGames}
+          highlight={upcomingHighlight}
+        />
+      </Suspense>
 
-      <Showcase
-        title="Free games"
-        highlight={freeGamesHighlight}
-        games={freeGames}
-      />
+      <Suspense fallback={<p>Loading Free Games</p>}>
+        <Showcase
+          title="Free games"
+          highlight={freeGamesHighlight}
+          games={freeGames}
+        />
+      </Suspense>
     </BaseTemplate>
   )
 }

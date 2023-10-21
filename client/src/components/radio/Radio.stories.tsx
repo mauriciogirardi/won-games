@@ -3,12 +3,7 @@ import { Radio } from './Radio'
 
 export default {
   title: 'Form/Radio',
-  component: Radio,
-  parameters: {
-    backgrounds: {
-      default: 'won-dark'
-    }
-  }
+  component: Radio
 } as Meta
 
 export const Default: StoryObj<typeof Radio> = {

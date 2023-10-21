@@ -13,7 +13,6 @@ export default function App() {
       banners={banners}
       freeGames={games}
       newGames={games}
-      upcomingMoreGames={games}
       mostPopularGames={games}
       upcomingGames={games}
       freeGamesHighlight={highlight}

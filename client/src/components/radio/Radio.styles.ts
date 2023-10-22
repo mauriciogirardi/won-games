@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { RadioProps } from './Radio'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 type LabelProps = Pick<RadioProps, 'labelColor'>
 

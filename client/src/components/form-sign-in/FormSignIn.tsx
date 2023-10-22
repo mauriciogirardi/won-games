@@ -1,6 +1,6 @@
 'use client'
 
-import { Email, Lock } from 'styled-icons/material-outlined'
+import { Email, Lock } from '@styled-icons/material-outlined'
 import Link from 'next/link'
 import { TextField } from '../text-field/TextField'
 import { Button } from '../button/Button'

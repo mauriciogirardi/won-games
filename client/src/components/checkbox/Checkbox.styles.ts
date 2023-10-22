@@ -1,4 +1,4 @@
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 import styled, { css } from 'styled-components'
 import { CheckboxProps } from './Checkbox'
 

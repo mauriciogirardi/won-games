@@ -1,7 +1,11 @@
 'use client'
 
-import { Email, Lock } from 'styled-icons/material-outlined'
-import { UserCircle } from 'styled-icons/boxicons-regular'
+import {
+  Email,
+  Lock,
+  SupervisedUserCircle
+} from '@styled-icons/material-outlined'
+// import { UserCircle } from '@styled-icons/boxicons-regular'
 import { TextField } from '../text-field/TextField'
 import { Button } from '../button/Button'
 import { FormLink, FormContainer } from '../form/Form'
@@ -16,7 +20,7 @@ export function FormSignUp() {
           name="name"
           placeholder="Name"
           type="text"
-          icon={<UserCircle />}
+          icon={<SupervisedUserCircle />}
         />
         <TextField
           name="email"

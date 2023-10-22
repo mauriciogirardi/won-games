@@ -1,5 +1,5 @@
 'use client'
-import { ArrowBackIos, ArrowForwardIos } from 'styled-icons/material-outlined'
+import { ArrowBackIos, ArrowForwardIos } from '@styled-icons/material-outlined'
 
 import { GameCard, GameCardProps } from '../game-card/GameCard'
 import { Slider, SliderSettings } from '../slider/Slider'

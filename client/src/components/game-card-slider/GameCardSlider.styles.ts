@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { GameCardSliderProps } from './GameCardSlider'
 import media from 'styled-media-query'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 type GameCardSliderContainerProps = Pick<GameCardSliderProps, 'color'>
 

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import { LogoProps } from './Logo'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 const wrapperModifiers = {
   large: () => css`

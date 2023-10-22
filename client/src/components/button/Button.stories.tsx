@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { Center } from '@/utils/stories/Center'
-import { AddShoppingCart } from 'styled-icons/material'
+import { AddShoppingCart } from '@styled-icons/material'
 
 export default {
   title: 'Button',

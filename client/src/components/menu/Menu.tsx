@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu2 as MenuIcon } from 'styled-icons/remix-fill'
+// import { Menu2 as MenuIcon } from 'styled-icons/remix-fill'
 import {
   Search as SearchIcon,
   ShoppingCart as ShoppingCartIcon,
-  Close as CloseIcon
-} from 'styled-icons/material'
+  Close as CloseIcon,
+  Menu as MenuIcon
+} from '@styled-icons/material'
 import { Logo } from '@/components/logo/Logo'
 import * as S from './Menu.styles'
 import { Button } from '../button/Button'

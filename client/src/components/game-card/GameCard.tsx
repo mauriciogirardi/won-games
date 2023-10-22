@@ -4,7 +4,7 @@ import {
   AddShoppingCart,
   Favorite,
   FavoriteBorder
-} from 'styled-icons/material'
+} from '@styled-icons/material'
 import * as S from './GameCard.styles'
 import { Button } from '../button/Button'
 import { Ribbon, RibbonTypes } from '../ribbon/Ribbon'

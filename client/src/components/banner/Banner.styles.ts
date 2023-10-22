@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import { RibbonContainer } from '@/components/ribbon/Ribbon.styles'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 type ImageProps = {
   src: string

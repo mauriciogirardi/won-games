@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { HighlightProps } from './Highlight'
 import media from 'styled-media-query'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 type HighlightContainerProps = Pick<
   HighlightProps,

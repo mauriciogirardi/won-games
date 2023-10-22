@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { Button } from './Button'
 import { renderWithTheme } from '@/utils/tests/helpers'
-import { AddShoppingCart } from 'styled-icons/material'
+import { AddShoppingCart } from '@styled-icons/material'
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {

@@ -1,4 +1,4 @@
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 import { darken } from 'polished'
 import styled, { DefaultTheme, css } from 'styled-components'
 

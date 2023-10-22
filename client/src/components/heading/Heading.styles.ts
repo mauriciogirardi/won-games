@@ -1,7 +1,7 @@
 import styled, { DefaultTheme, css } from 'styled-components'
 import media from 'styled-media-query'
 import { HeadingProps, LineColorType } from './Heading'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 export const wrapperModifiers = {
   lineLeft: (theme: DefaultTheme, lineColor: LineColorType) => css`

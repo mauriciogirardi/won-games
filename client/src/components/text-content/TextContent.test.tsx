@@ -41,9 +41,8 @@ describe('<TextContent />', () => {
       color: themes.colors.white
     })
 
-    // TODO
-    // expect(wrapper).toHaveStyleRule('color', themes.colors.black, {
-    //   media: '(min-width: 768px)'
-    // })
+    expect(wrapper).toHaveStyleRule('color', themes.colors.black, {
+      media: '(min-width:  768px)'
+    })
   })
 })

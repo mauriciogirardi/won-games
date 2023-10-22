@@ -1,4 +1,4 @@
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 import styled, { DefaultTheme, css } from 'styled-components'
 import media from 'styled-media-query'
 

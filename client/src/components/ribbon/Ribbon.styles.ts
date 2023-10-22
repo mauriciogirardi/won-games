@@ -1,7 +1,7 @@
 import styled, { DefaultTheme, css } from 'styled-components'
 import { ColorTypes, RibbonProps } from './Ribbon'
 import { darken } from 'polished'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
 const wrapperModifier = {
   color: (theme: DefaultTheme, color: ColorTypes) => css`

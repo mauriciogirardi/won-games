@@ -1,7 +1,6 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { DefaultTheme, css } from 'styled-components'
 import { ButtonProps } from './Button'
-import { css } from 'styled-components'
-import { shouldForwardProps } from '@/styles/utils/shoulfForwardProp'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 import { darken } from 'polished'
 
 type ButtonContainerProps = {

@@ -1,4 +1,4 @@
-import { Linux, Windows, Apple } from 'styled-icons/fa-brands'
+import { Linux, Windows, Apple } from '@styled-icons/fa-brands'
 
 export const renderPlatformIcons = {
   linux: <Linux title="Linux" size={18} />,

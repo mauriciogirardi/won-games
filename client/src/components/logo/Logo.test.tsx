@@ -40,17 +40,15 @@ describe('<Logo />', () => {
     expect(container.querySelector('#a-my-id')).toBeInTheDocument()
   })
 
-  // it('should render a bigger logo without text if hideOnMobile', () => {
-  //   const { debug } = renderWithTheme(<Logo hideOnMobile />)
+  it('should render a bigger logo without text if hideOnMobile', () => {
+    renderWithTheme(<Logo hideOnMobile />)
 
-  //   debug()
-
-  //   expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyleRule(
-  //     'width',
-  //     '5.8rem',
-  //     {
-  //       media: '(max-width: 768px)'
-  //     }
-  //   )
-  // })
+    expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyleRule(
+      'width',
+      '5.8rem',
+      {
+        media: '(max-width:  768px)'
+      }
+    )
+  })
 })

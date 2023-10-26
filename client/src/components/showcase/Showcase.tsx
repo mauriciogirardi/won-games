@@ -11,16 +11,18 @@ export type ShowcaseProps = {
   color?: 'white' | 'black'
   highlight?: HighlightProps
   games?: GameCardProps[]
+  mt?: string
 }
 
 export function Showcase({
   title,
   color = 'white',
   games,
-  highlight
+  highlight,
+  mt
 }: ShowcaseProps) {
   return (
-    <S.ShowcaseContainer>
+    <S.ShowcaseContainer mt={mt}>
       {!!title && (
         <Heading lineLeft lineColor="secondary" color={color}>
           {title}

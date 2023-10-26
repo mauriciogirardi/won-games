@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
+
 import { useEffect, useState, useRef } from 'react'
 import SlickSlider from 'react-slick'
 import { ArrowBackIos, ArrowForwardIos } from '@styled-icons/material-outlined'
@@ -88,13 +89,6 @@ export function Gallery({ items }: GalleryProps) {
             key={`thumb-${index}`}
             src={item.src}
             alt={`Thumb - ${item.label}`}
-            // width={400}
-            // height={233}
-            // style={{
-            //   width: '100%',
-            //   height: 'auto'
-            // }}
-            // priority
           />
         ))}
       </Slider>
@@ -111,18 +105,7 @@ export function Gallery({ items }: GalleryProps) {
         <S.Content>
           <Slider ref={refSlider} settings={modalSettings}>
             {items?.map((item, index) => (
-              <img
-                key={`gallery-${index}`}
-                src={item.src}
-                alt={item.label}
-                // width={400}
-                // height={233}
-                // style={{
-                //   width: '100%',
-                //   height: 'auto'
-                // }}
-                // priority
-              />
+              <img key={`gallery-${index}`} src={item.src} alt={item.label} />
             ))}
           </Slider>
         </S.Content>

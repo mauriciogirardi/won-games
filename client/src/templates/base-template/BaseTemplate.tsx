@@ -1,5 +1,3 @@
-'use client'
-
 import { ReactNode } from 'react'
 import * as S from './BaseTemplate.styles'
 import { Menu } from '@/components/menu/Menu'
@@ -12,18 +10,18 @@ export type BaseTemplateProps = {
 
 export function BaseTemplate({ children }: BaseTemplateProps) {
   return (
-    <section>
+    <S.BaseTemplateContainer>
       <Container>
         <Menu />
       </Container>
 
-      {children}
+      <S.Main>{children}</S.Main>
 
       <S.SectionFooter>
         <Container>
           <Footer />
         </Container>
       </S.SectionFooter>
-    </section>
+    </S.BaseTemplateContainer>
   )
 }

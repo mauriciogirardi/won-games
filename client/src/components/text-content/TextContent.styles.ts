@@ -49,5 +49,9 @@ export const TextContentContainer = styled.div`
     hr {
       margin: ${theme.spacings.small} 0;
     }
+
+    video {
+      max-width: min(90rem, 100%);
+    }
   `}
 `

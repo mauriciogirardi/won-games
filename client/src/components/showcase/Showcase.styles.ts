@@ -5,9 +5,14 @@ import { GameCardSliderContainer } from '../game-card-slider/GameCardSlider.styl
 import { HighlightContainer } from '../highlight/Highlight.styles'
 import { HeadingContainer } from '../heading/Heading.styles'
 import { Container } from '../container/Container'
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 
-export const ShowcaseContainer = styled(Container).attrs({ as: 'section' })`
-  ${({ theme }) => css`
+export const ShowcaseContainer = styled(Container)
+  .attrs({ as: 'section' })
+  .withConfig(shouldForwardProps(['mt']))<{
+  mt?: string
+}>`
+  ${({ theme, mt }) => css`
     ${HeadingContainer},
     ${HighlightContainer},
     ${GameCardSliderContainer} {
@@ -26,5 +31,10 @@ export const ShowcaseContainer = styled(Container).attrs({ as: 'section' })`
         margin-right: calc(-${theme.grid.gutter} / 2);
       `}
     }
+
+    ${!!mt &&
+    css`
+      margin-top: ${mt};
+    `}
   `}
 `

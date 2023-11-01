@@ -74,7 +74,7 @@ devDependencies:
     specifier: ^7.4.2
     version: 7.4.4(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
   '@storybook/nextjs':
-    specifier: ^7.4.2
+    specifier: ^7.4.4
     version: 7.4.4(@swc/core@1.3.88)(@types/react-dom@18.2.7)(@types/react@18.2.21)(esbuild@0.18.20)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)(webpack@5.88.2)
   '@storybook/react':
     specifier: ^7.4.2

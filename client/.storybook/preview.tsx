@@ -32,5 +32,8 @@ export const parameters = {
         value: themes.colors.mainBg
       }
     ]
+  },
+  nextjs: {
+    appDirectory: true
   }
 }

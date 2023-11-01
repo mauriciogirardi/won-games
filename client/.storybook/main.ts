@@ -10,7 +10,9 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/nextjs',
-    options: {}
+    options: {
+      nextConfigPath: path.resolve(__dirname, '../next.config.js')
+    }
   },
   docs: {
     autodocs: true

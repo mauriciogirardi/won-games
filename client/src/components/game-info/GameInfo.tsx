@@ -1,10 +1,10 @@
 'use client'
 
-import { AddShoppingCart, FavoriteBorder } from '@styled-icons/material'
 import { Button } from '../button/Button'
 import { Heading } from '../heading/Heading'
 import * as S from './GameInfo.styles'
 import { Ribbon } from '../ribbon/Ribbon'
+import { Heart, ShoppingCart } from 'lucide-react'
 
 export type GameInfoProps = {
   title: string
@@ -21,10 +21,10 @@ export function GameInfo({ description, price, title }: GameInfoProps) {
       <S.Description>{description}</S.Description>
 
       <S.WrapperButton>
-        <Button icon={<AddShoppingCart />} size="large">
+        <Button icon={<ShoppingCart size={22} />} size="large">
           Add to cart
         </Button>
-        <Button minimal icon={<FavoriteBorder />} size="large">
+        <Button minimal icon={<Heart size={22} />} size="large">
           Wishlist
         </Button>
       </S.WrapperButton>

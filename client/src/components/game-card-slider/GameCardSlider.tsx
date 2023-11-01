@@ -1,8 +1,8 @@
 'use client'
-import { ArrowBackIos, ArrowForwardIos } from '@styled-icons/material-outlined'
 
 import { GameCard, GameCardProps } from '../game-card/GameCard'
 import { Slider, SliderSettings } from '../slider/Slider'
+import { ArrowRight, ArrowLeft } from 'lucide-react'
 import * as S from './GameCardSlider.styles'
 
 export type GameCardSliderProps = {
@@ -11,8 +11,8 @@ export type GameCardSliderProps = {
 }
 
 const settings: SliderSettings = {
-  nextArrow: <ArrowForwardIos aria-label="Next games" />,
-  prevArrow: <ArrowBackIos aria-label="Previous games" />,
+  nextArrow: <ArrowLeft aria-label="Next games" />,
+  prevArrow: <ArrowRight aria-label="Previous games" />,
   slidesToShow: 4,
   infinite: false,
   lazyLoad: 'ondemand',

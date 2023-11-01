@@ -4,6 +4,11 @@ import { Footer } from './Footer'
 export default {
   title: 'Footer',
   component: Footer,
+  parameters: {
+    backgrounds: {
+      default: 'win-light'
+    }
+  },
   decorators: [
     (Story) => (
       <div

@@ -1,13 +1,11 @@
 'use client'
 
-import {
-  AddShoppingCart,
-  Favorite,
-  FavoriteBorder
-} from '@styled-icons/material'
-import * as S from './GameCard.styles'
-import { Button } from '../button/Button'
+import { ShoppingCart, Heart } from 'lucide-react'
 import { Ribbon, RibbonTypes } from '../ribbon/Ribbon'
+import { Button } from '../button/Button'
+import { themes } from '@/styles/themes'
+
+import * as S from './GameCard.styles'
 
 export type GameCardProps = {
   title: string
@@ -50,9 +48,12 @@ export function GameCard({
 
         <S.FavButton role="button" onClick={onFavorite}>
           {favorite ? (
-            <Favorite aria-label="Remove from wishlist" />
+            <Heart
+              aria-label="Remove from wishlist"
+              fill={themes.colors.primary}
+            />
           ) : (
-            <FavoriteBorder aria-label="Add to wishlist" />
+            <Heart aria-label="Add to wishlist" />
           )}
         </S.FavButton>
 
@@ -60,7 +61,7 @@ export function GameCard({
           {!!promotionalPrice && <S.Price isPromotional>{price}</S.Price>}
           <S.Price>{promotionalPrice || price}</S.Price>
           <Button
-            icon={<AddShoppingCart aria-label="Add to cart" />}
+            icon={<ShoppingCart aria-label="Add to cart" />}
             size="small"
           />
         </S.BuyBox>

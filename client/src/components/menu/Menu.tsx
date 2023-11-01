@@ -1,18 +1,14 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
-import {
-  Search as SearchIcon,
-  ShoppingCart as ShoppingCartIcon,
-  Close as CloseIcon,
-  Menu as MenuIcon
-} from '@styled-icons/material'
+import { Search, ShoppingBag, X, Menu as MenuIcon } from 'lucide-react'
+
 import { Logo } from '@/components/logo/Logo'
-import * as S from './Menu.styles'
 import { Button } from '../button/Button'
 import { MediaMatch } from '../media-match/MediaMatch'
-import Link from 'next/link'
 import { PATH_HOME, PATH_SIGN_IN, PATH_SIGN_UP } from '@/constants/paths'
+import * as S from './Menu.styles'
 
 export type MenuProps = {
   username?: string
@@ -47,11 +43,11 @@ export function Menu({ username }: MenuProps) {
 
       <S.MenuGroup>
         <S.IconWrapper>
-          <SearchIcon aria-label="Search" />
+          <Search aria-label="Search" />
         </S.IconWrapper>
 
         <S.IconWrapper>
-          <ShoppingCartIcon aria-label="Open Shopping Cart" />
+          <ShoppingBag aria-label="Open Shopping Cart" />
         </S.IconWrapper>
 
         {!username && (
@@ -64,7 +60,7 @@ export function Menu({ username }: MenuProps) {
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-        <CloseIcon aria-label="Close Menu" onClick={handleCloseMenu} />
+        <X aria-label="Close Menu" onClick={handleCloseMenu} />
 
         <S.MenuNav>
           <S.MenuLink href={PATH_HOME}>Home</S.MenuLink>

@@ -4,7 +4,7 @@ import { mockGameInfo } from './mock/mockGameInfo'
 import { Center } from '@/utils/stories/Center'
 
 export default {
-  title: 'GameInfo',
+  title: 'Game/GameInfo',
   component: GameInfo,
   decorators: [
     (Story) => (

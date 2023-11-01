@@ -3,7 +3,7 @@ import { GameDetails } from './GameDetails'
 import { mockGameDetails } from './mock'
 
 export default {
-  title: 'GameDetails',
+  title: 'Game/GameDetails',
   component: GameDetails,
   decorators: [
     (Story) => (

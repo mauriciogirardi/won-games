@@ -8,12 +8,6 @@ dependencies:
   '@styled-icons/fa-brands':
     specifier: ^10.47.0
     version: 10.47.0(react@18.2.0)(styled-components@6.0.8)
-  '@styled-icons/material':
-    specifier: ^10.47.0
-    version: 10.47.0(react@18.2.0)(styled-components@6.0.8)
-  '@styled-icons/material-outlined':
-    specifier: ^10.47.0
-    version: 10.47.0(react@18.2.0)(styled-components@6.0.8)
   '@types/node':
     specifier: 20.6.2
     version: 20.6.2
@@ -29,6 +23,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.4.19
     version: 13.4.19(eslint@8.50.0)(typescript@5.2.2)
+  lucide-react:
+    specifier: ^0.291.0
+    version: 0.291.0(react@18.2.0)
   next:
     specifier: 13.4.19
     version: 13.4.19(@babel/core@7.22.20)(react-dom@18.2.0)(react@18.2.0)
@@ -4160,30 +4157,6 @@ packages:
 
   /@styled-icons/fa-brands@10.47.0(react@18.2.0)(styled-components@6.0.8):
     resolution: {integrity: sha512-w+G31+61nBnjxzCwMs+H9rNm9jl+HhtRgZYvNd+2NKQn1dRbHbBVXzQEHCOL6hksvkDbIa0iPrenqMU6pB+wZQ==}
-    peerDependencies:
-      react: '*'
-      styled-components: '*'
-    dependencies:
-      '@babel/runtime': 7.22.15
-      '@styled-icons/styled-icon': 10.7.0(react@18.2.0)(styled-components@6.0.8)
-      react: 18.2.0
-      styled-components: 6.0.8(react-dom@18.2.0)(react@18.2.0)
-    dev: false
-
-  /@styled-icons/material-outlined@10.47.0(react@18.2.0)(styled-components@6.0.8):
-    resolution: {integrity: sha512-/QeDSGXlfRoIsgx4g4Hb//xhsucD4mJJsNPk/e1XzckxkNG+YHCIjbAHzDwxwNfSCJYcTDcOp2SZcoS7iyNGlw==}
-    peerDependencies:
-      react: '*'
-      styled-components: '*'
-    dependencies:
-      '@babel/runtime': 7.22.15
-      '@styled-icons/styled-icon': 10.7.0(react@18.2.0)(styled-components@6.0.8)
-      react: 18.2.0
-      styled-components: 6.0.8(react-dom@18.2.0)(react@18.2.0)
-    dev: false
-
-  /@styled-icons/material@10.47.0(react@18.2.0)(styled-components@6.0.8):
-    resolution: {integrity: sha512-6fwoLPHg3P9O/iXSblQ67mchgURJvhU7mfba29ICfpg62zJ/loEalUgspm1GGtYVSPtkejshVWUtV99dXpcQfg==}
     peerDependencies:
       react: '*'
       styled-components: '*'
@@ -9716,6 +9689,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+
+  /lucide-react@0.291.0(react@18.2.0):
+    resolution: {integrity: sha512-79jHlT9Je2PXSvXIBGDkItCK7In2O9iKnnSJ/bJxvIBOFaX2Ex0xEcC4fRS/g0F2uQGFejjmn2qWhwdc5wicMQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}

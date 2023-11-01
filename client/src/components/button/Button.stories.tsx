@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { Center } from '@/utils/stories/Center'
-import { AddShoppingCart } from '@styled-icons/material'
+import { ShoppingCart } from 'lucide-react'
 
 export default {
   title: 'Button',
@@ -30,14 +30,14 @@ export const Default: StoryObj<typeof Button> = {
 export const WithIcon: StoryObj<typeof Button> = {
   args: {
     children: 'Click me',
-    icon: <AddShoppingCart />,
+    icon: <ShoppingCart />,
     size: 'small'
   }
 }
 
 export const JustIcon: StoryObj<typeof Button> = {
   args: {
-    icon: <AddShoppingCart />,
+    icon: <ShoppingCart />,
     size: 'small'
   }
 }

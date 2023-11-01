@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { Button } from './Button'
 import { renderWithTheme } from '@/utils/tests/helpers'
-import { AddShoppingCart } from '@styled-icons/material'
+import { ShoppingCart } from 'lucide-react'
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {
@@ -49,7 +49,7 @@ describe('<Button />', () => {
 
   it('should render an icon version', () => {
     renderWithTheme(
-      <Button icon={<AddShoppingCart data-testid="icon" />}>Buy now</Button>
+      <Button icon={<ShoppingCart data-testid="icon" />}>Buy now</Button>
     )
     const buttonText = screen.getByText(/Buy now/i)
     const icon = screen.getByTestId('icon')
@@ -73,7 +73,7 @@ describe('<Button />', () => {
 
   it('should render a minimal version', () => {
     renderWithTheme(
-      <Button icon={<AddShoppingCart data-testid="icon" />} minimal>
+      <Button icon={<ShoppingCart data-testid="icon" />} minimal>
         Buy now
       </Button>
     )

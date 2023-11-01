@@ -1,5 +1,6 @@
 module.exports = {
   testEnvironment: 'jsdom',
+  prettierPath: null,
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
   collectCoverageFrom: [

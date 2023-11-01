@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-// import { Menu2 as MenuIcon } from 'styled-icons/remix-fill'
 import {
   Search as SearchIcon,
   ShoppingCart as ShoppingCartIcon,
@@ -34,7 +33,9 @@ export function Menu({ username }: MenuProps) {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Logo hideOnMobile />
+        <Link href={PATH_HOME} passHref>
+          <Logo hideOnMobile />
+        </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">

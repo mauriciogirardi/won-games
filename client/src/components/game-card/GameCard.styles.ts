@@ -24,10 +24,12 @@ const wrapperModifier = {
 
 export const GameCardContainer = styled.article`
   ${({ theme }) => css`
-    /* box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2); */
     position: relative;
-    background-color: ${theme.colors.white};
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height: 100%;
+    background-color: ${theme.colors.white};
   `}
 `
 

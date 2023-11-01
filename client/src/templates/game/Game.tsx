@@ -13,6 +13,7 @@ import * as S from './Game.styles'
 import { Showcase } from '@/components/showcase/Showcase'
 import { GameCardProps } from '@/components/game-card/GameCard'
 import { HighlightProps } from '@/components/highlight/Highlight'
+import { Divider } from '@/components/divider/Divider'
 
 export type GameTemplateProps = {
   cover: string
@@ -55,6 +56,7 @@ export function GameTemplate({
 
       <S.SectionDetails>
         <GameDetails {...gameDetails} />
+        <Divider />
       </S.SectionDetails>
 
       <Showcase title="Upcoming" games={games} highlight={highlight} />

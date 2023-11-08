@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { TextField } from './TextField'
-import { Email } from '@styled-icons/material-outlined'
+import { Mail } from 'lucide-react'
 
 export default {
   title: 'Form/TextField',
@@ -32,7 +32,7 @@ export const InputWithIcon: StoryObj<typeof TextField> = {
     label: 'E-mail',
     labelFor: 'email',
     placeholder: 'john@doe.com',
-    icon: <Email />
+    icon: <Mail />
   }
 }
 

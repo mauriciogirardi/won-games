@@ -2,7 +2,7 @@ import { screen, waitFor } from '@testing-library/react'
 import { TextField } from './TextField'
 import { renderWithTheme } from '@/utils/tests/helpers'
 import userEvent from '@testing-library/user-event'
-import { Email } from '@styled-icons/material-outlined'
+import { Mail } from 'lucide-react'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
@@ -58,13 +58,13 @@ describe('<TextField />', () => {
   })
 
   it('should render with icon', () => {
-    renderWithTheme(<TextField icon={<Email data-testid="icon" />} />)
+    renderWithTheme(<TextField icon={<Mail data-testid="icon" />} />)
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 
   it('should with icon on the right side', () => {
     renderWithTheme(
-      <TextField icon={<Email data-testid="icon" />} iconPosition="right" />
+      <TextField icon={<Mail data-testid="icon" />} iconPosition="right" />
     )
 
     expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 })
@@ -102,7 +102,7 @@ describe('<TextField />', () => {
         labelFor="TextField"
         id="TextField"
         error="Error msg"
-        icon={<Email data-testid="icon" />}
+        icon={<Mail data-testid="icon" />}
       />
     )
 

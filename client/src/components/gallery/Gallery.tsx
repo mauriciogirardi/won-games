@@ -3,8 +3,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import SlickSlider from 'react-slick'
-import { ArrowBackIos, ArrowForwardIos } from '@styled-icons/material-outlined'
-import { Close } from '@styled-icons/material'
+import { X, ArrowLeft, ArrowRight } from 'lucide-react'
 import { Slider, SliderSettings } from '../slider/Slider'
 import * as S from './Gallery.styles'
 
@@ -17,8 +16,8 @@ export type GalleryProps = {
 }
 
 const commonSettings: SliderSettings = {
-  nextArrow: <ArrowForwardIos aria-label="Next image" />,
-  prevArrow: <ArrowBackIos aria-label="Previous image" />,
+  nextArrow: <ArrowRight aria-label="Next image" />,
+  prevArrow: <ArrowLeft aria-label="Previous image" />,
   infinite: false,
   lazyLoad: 'ondemand'
 }
@@ -99,7 +98,7 @@ export function Gallery({ items }: GalleryProps) {
           aria-label="close modal"
           onClick={handleCloseModal}
         >
-          <Close size={40} />
+          <X size={40} />
         </S.Close>
 
         <S.Content>

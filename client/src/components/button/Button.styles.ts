@@ -46,13 +46,20 @@ const wrapperModifier = {
     &:hover {
       color: ${darken(0.2, theme.colors.primary)};
     }
+  `,
+
+  disabled: () => css`
+    &:disabled {
+      filter: saturate(30%);
+      cursor: not-allowed;
+    }
   `
 }
 
 export const ButtonContainer = styled('button').withConfig(
   shouldForwardProps(['size', 'fullWidth', 'hasIcon', 'minimal'])
 )<ButtonContainerProps>`
-  ${({ size, theme, fullWidth, hasIcon, minimal }) => css`
+  ${({ size, theme, fullWidth, hasIcon, minimal, disabled }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     border-radius: ${theme.border.radius};
     border: 0;
@@ -71,6 +78,7 @@ export const ButtonContainer = styled('button').withConfig(
     ${!!hasIcon && wrapperModifier.withIcon(theme)}
     ${!!fullWidth && wrapperModifier.fullWidth()}
     ${!!minimal && wrapperModifier.minimal(theme)}
+    ${disabled && wrapperModifier.disabled()}
 
     &:focus {
       box-shadow: 0 0 0.5rem ${theme.colors.primary};

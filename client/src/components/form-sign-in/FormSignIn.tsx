@@ -1,6 +1,6 @@
 'use client'
 
-import { Email, Lock } from '@styled-icons/material-outlined'
+import { Mail, Lock } from 'lucide-react'
 import Link from 'next/link'
 import { TextField } from '../text-field/TextField'
 import { Button } from '../button/Button'
@@ -16,7 +16,7 @@ export function FormSignIn() {
           name="email"
           placeholder="Email"
           type="email"
-          icon={<Email />}
+          icon={<Mail />}
         />
         <TextField
           name="password"

@@ -74,6 +74,7 @@ export const Icon = styled.div.withConfig(
     width: 2.4rem;
     color: ${theme.colors.gray};
     order: ${iconPosition === 'right' ? 1 : 0};
+    line-height: 0;
 
     & > svg {
       width: 100%;

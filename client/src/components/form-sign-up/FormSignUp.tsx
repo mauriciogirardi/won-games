@@ -1,11 +1,6 @@
 'use client'
 
-import {
-  Email,
-  Lock,
-  SupervisedUserCircle
-} from '@styled-icons/material-outlined'
-// import { UserCircle } from '@styled-icons/boxicons-regular'
+import { Mail, Lock, UserCircle } from 'lucide-react'
 import { TextField } from '../text-field/TextField'
 import { Button } from '../button/Button'
 import { FormLink, FormContainer } from '../form/Form'
@@ -20,13 +15,13 @@ export function FormSignUp() {
           name="name"
           placeholder="Name"
           type="text"
-          icon={<SupervisedUserCircle />}
+          icon={<UserCircle />}
         />
         <TextField
           name="email"
           placeholder="Email"
           type="email"
-          icon={<Email />}
+          icon={<Mail />}
         />
         <TextField
           name="password"

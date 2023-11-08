@@ -14,9 +14,7 @@ const wrapperModifier = {
   `
 }
 
-export const GalleryContainer = styled('section').withConfig(
-  shouldForwardProps(['slideCount', 'currentSlide'])
-)`
+export const GalleryContainer = styled('section')`
   ${({ theme }) => css`
     img {
       cursor: pointer;

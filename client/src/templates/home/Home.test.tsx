@@ -1,7 +1,7 @@
 import 'match-media-mock'
 
 import { screen } from '@testing-library/react'
-import { Home, HomeProps } from './Home'
+import { HomeTemplate, HomeProps } from './Home'
 import { renderWithTheme } from '@/utils/tests/helpers'
 import { items as banners } from '@/components/banner-slider/mock/index'
 import { items as gameCards } from '@/components/game-card-slider/mock/index'
@@ -27,9 +27,9 @@ jest.mock('@/components/showcase/Showcase', () => {
   }
 })
 
-describe('<Home />', () => {
+describe('<HomeTemplate />', () => {
   it('should render all showcase', () => {
-    renderWithTheme(<Home {...initialProps} />)
+    renderWithTheme(<HomeTemplate {...initialProps} />)
     expect(screen.getAllByTestId('mock showcase')).toHaveLength(4)
   })
 })

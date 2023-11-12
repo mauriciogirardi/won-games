@@ -1,7 +1,7 @@
 import { useBannerSlider } from '@/hooks/useBannerSlider'
 import { useGames } from '@/hooks/useGames'
 import { useHighlight } from '@/hooks/useHighlight'
-import { Home } from '@/templates/home/Home'
+import { HomeTemplate } from '@/templates/home/Home'
 
 export default function App() {
   const { banners } = useBannerSlider()
@@ -9,7 +9,7 @@ export default function App() {
   const { highlight } = useHighlight()
 
   return (
-    <Home
+    <HomeTemplate
       banners={banners}
       freeGames={games}
       newGames={games}

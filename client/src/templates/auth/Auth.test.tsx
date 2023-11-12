@@ -1,13 +1,13 @@
 import { screen } from '@testing-library/react'
-import { Auth } from './Auth'
+import { AuthTemplate } from './Auth'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
-describe('<Auth />', () => {
+describe('<AuthTemplate />', () => {
   it('should render the logo, title , children', () => {
     renderWithTheme(
-      <Auth title="Sign In">
+      <AuthTemplate title="Sign In">
         <p>children</p>
-      </Auth>
+      </AuthTemplate>
     )
 
     expect(

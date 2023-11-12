@@ -1,5 +1,5 @@
 import { FormSignUp } from '@/components/form-sign-up/FormSignUp'
-import { Auth } from '@/templates/auth/Auth'
+import { AuthTemplate } from '@/templates/auth/Auth'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function SignUp() {
   return (
-    <Auth title="Sign Up">
+    <AuthTemplate title="Sign Up">
       <FormSignUp />
-    </Auth>
+    </AuthTemplate>
   )
 }

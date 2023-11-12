@@ -12,7 +12,7 @@ export type AuthProps = {
   title: string
 }
 
-export function Auth({ children, title }: AuthProps) {
+export function AuthTemplate({ children, title }: AuthProps) {
   return (
     <S.AuthContainer>
       <S.BannerBlock>

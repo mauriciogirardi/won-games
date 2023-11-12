@@ -11,7 +11,7 @@ import { Grid } from '@/components/grid/Grid'
 import { Divider } from '@/components/divider/Divider'
 import { Empty } from '@/components/empty/Empty'
 
-export function Wishlist() {
+export function WishlistTemplate() {
   const hasWishlist = items.length > 0
 
   return (

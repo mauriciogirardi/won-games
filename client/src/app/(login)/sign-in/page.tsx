@@ -1,5 +1,5 @@
 import { FormSignIn } from '@/components/form-sign-in/FormSignIn'
-import { Auth } from '@/templates/auth/Auth'
+import { AuthTemplate } from '@/templates/auth/Auth'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function SignIn() {
   return (
-    <Auth title="Sign In">
+    <AuthTemplate title="Sign In">
       <FormSignIn />
-    </Auth>
+    </AuthTemplate>
   )
 }

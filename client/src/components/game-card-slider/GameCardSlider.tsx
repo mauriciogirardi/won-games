@@ -2,7 +2,7 @@
 
 import { GameCard, GameCardProps } from '../game-card/GameCard'
 import { Slider, SliderSettings } from '../slider/Slider'
-import { ArrowRight, ArrowLeft } from 'lucide-react'
+import { ChevronRight, ChevronLeft } from 'lucide-react'
 import * as S from './GameCardSlider.styles'
 
 export type GameCardSliderProps = {
@@ -11,8 +11,8 @@ export type GameCardSliderProps = {
 }
 
 const settings: SliderSettings = {
-  nextArrow: <ArrowLeft aria-label="Next games" />,
-  prevArrow: <ArrowRight aria-label="Previous games" />,
+  nextArrow: <ChevronRight aria-label="Next games" size={24} />,
+  prevArrow: <ChevronLeft aria-label="Previous games" size={24} />,
   slidesToShow: 4,
   infinite: false,
   lazyLoad: 'ondemand',

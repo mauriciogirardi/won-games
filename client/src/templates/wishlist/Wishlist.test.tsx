@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { Wishlist } from './Wishlist'
+import { WishlistTemplate } from './Wishlist'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
 jest.mock('@/components/showcase/Showcase', () => {
@@ -11,9 +11,9 @@ jest.mock('@/components/showcase/Showcase', () => {
   }
 })
 
-describe('<Wishlist />', () => {
+describe('<WishlistTemplate />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Wishlist />)
+    renderWithTheme(<WishlistTemplate />)
 
     expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument()
     expect(
@@ -24,7 +24,7 @@ describe('<Wishlist />', () => {
   })
 
   // it('should render empty when there are no games', () => {
-  //   renderWithTheme(<Wishlist />)
+  //   renderWithTheme(<WishlistTemplate />)
   //   expect(screen.queryAllByText(/Rackstar Games/i)).not.toBeInTheDocument()
   //   expect(
   //     screen.getByRole('heading', { name: /your wishlist is empty/i })

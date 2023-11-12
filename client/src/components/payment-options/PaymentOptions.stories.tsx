@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { PaymentOptions } from './PaymentOptions'
-import { cardsMock } from './mock'
+import { mockPaymentOptions } from './mock'
 import { Center } from '@/utils/stories/Center'
 
 export default {
@@ -19,6 +19,6 @@ export default {
 
 export const Default: StoryObj<typeof PaymentOptions> = {
   args: {
-    cards: cardsMock
+    cards: mockPaymentOptions
   }
 }

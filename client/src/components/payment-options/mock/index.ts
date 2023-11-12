@@ -1,6 +1,6 @@
 import { PaymentCard } from '../PaymentOptions'
 
-export const cardsMock: PaymentCard[] = [
+export const mockPaymentOptions: PaymentCard[] = [
   {
     flag: 'visa',
     img: '/img/visa.svg',

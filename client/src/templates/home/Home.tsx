@@ -22,7 +22,7 @@ export type HomeProps = {
   freeGamesHighlight: HighlightProps
 }
 
-export function Home({
+export function HomeTemplate({
   banners,
   newGames,
   freeGames,

@@ -22,7 +22,7 @@ export default {
 export const Default: StoryObj<typeof TextField> = {
   args: {
     label: 'Name',
-    labelFor: 'name',
+    name: 'name',
     placeholder: 'Your name'
   }
 }
@@ -30,7 +30,7 @@ export const Default: StoryObj<typeof TextField> = {
 export const InputWithIcon: StoryObj<typeof TextField> = {
   args: {
     label: 'E-mail',
-    labelFor: 'email',
+    name: 'email',
     placeholder: 'john@doe.com',
     icon: <Mail />
   }
@@ -39,7 +39,7 @@ export const InputWithIcon: StoryObj<typeof TextField> = {
 export const InputDisabled: StoryObj<typeof TextField> = {
   args: {
     label: 'E-mail',
-    labelFor: 'email',
+    name: 'email',
     initialValue: 'John@doe.com',
     disabled: true
   }
@@ -48,7 +48,7 @@ export const InputDisabled: StoryObj<typeof TextField> = {
 export const InputWithError: StoryObj<typeof TextField> = {
   args: {
     label: 'E-mail',
-    labelFor: 'email',
+    name: 'email',
     initialValue: 'John@doe.com',
     error: 'E-mail is not correctly!'
   }

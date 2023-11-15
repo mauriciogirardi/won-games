@@ -1,13 +1,6 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-export const FormProfileContainer = styled.div`
-  ${({ theme }) => css`
-    background: ${theme.colors.white};
-    padding: ${theme.spacings.xsmall};
-  `}
-`
-
 export const Form = styled.form`
   ${({ theme }) => css`
     max-width: 100%;

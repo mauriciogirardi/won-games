@@ -7,7 +7,7 @@ import * as S from './FormProfile.styles'
 
 export function FormProfile() {
   return (
-    <S.FormProfileContainer>
+    <>
       <Heading lineBottom size="small">
         My profile
       </Heading>
@@ -46,6 +46,6 @@ export function FormProfile() {
 
         <Button>Save</Button>
       </S.Form>
-    </S.FormProfileContainer>
+    </>
   )
 }

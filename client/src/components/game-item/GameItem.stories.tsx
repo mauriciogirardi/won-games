@@ -3,7 +3,7 @@ import { GameItem } from './GameItem'
 import { Center } from '@/utils/stories/Center'
 
 export default {
-  title: 'GameItem',
+  title: 'Game/GameItem',
   component: GameItem,
   decorators: [
     (Story) => (

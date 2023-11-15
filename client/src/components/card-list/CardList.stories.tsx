@@ -3,7 +3,7 @@ import { CardList } from './CardList'
 import { mockCardList } from './mock'
 
 export default {
-  title: 'CardList',
+  title: 'Card/CardList',
   component: CardList
 } as Meta
 

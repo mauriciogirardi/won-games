@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react'
 
-import * as S from './Home.styles'
+import * as S from './HomeTemplate.styles'
 import { Showcase } from '@/components/showcase/Showcase'
 import { Container } from '@/components/container/Container'
 import { BannerProps } from '@/components/banner/Banner'

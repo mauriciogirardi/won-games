@@ -13,7 +13,7 @@ import { initialProps } from '@/components/highlight/mocks'
 import { mockCardList } from '@/components/card-list/mock'
 import { mockPaymentOptions } from '@/components/payment-options/mock'
 
-import * as S from './Cart.styles'
+import * as S from './CartTemplate.styles'
 import { Empty } from '@/components/empty/Empty'
 
 export function CartTemplate() {

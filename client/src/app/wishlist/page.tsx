@@ -1,4 +1,4 @@
-import { WishlistTemplate } from '@/templates/wishlist/Wishlist'
+import { WishlistTemplate } from '@/templates/wishlist/WishlistTemplate'
 
 export default function PageWishlist() {
   return <WishlistTemplate />

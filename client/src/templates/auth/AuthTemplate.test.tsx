@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { AuthTemplate } from './Auth'
+import { AuthTemplate } from './AuthTemplate'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
 describe('<AuthTemplate />', () => {

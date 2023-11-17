@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { WishlistTemplate } from './Wishlist'
+import { WishlistTemplate } from './WishlistTemplate'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
 jest.mock('@/components/showcase/Showcase', () => {

@@ -1,6 +1,6 @@
 import { useGames } from '@/hooks/useGames'
 import { useHighlight } from '@/hooks/useHighlight'
-import { GameTemplate } from '@/templates/game/Game'
+import { GameTemplate } from '@/templates/game/GameTemplate'
 
 import { mockGallery } from '@/components/gallery/mock'
 import { mockGameInfo } from '@/components/game-info/mock/mockGameInfo'

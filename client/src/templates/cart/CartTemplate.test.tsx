@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { CartTemplate } from './Cart'
+import { CartTemplate } from './CartTemplate'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
 jest.mock('@/components/showcase/Showcase', () => {

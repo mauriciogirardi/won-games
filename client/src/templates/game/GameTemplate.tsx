@@ -9,7 +9,7 @@ import {
 import { TextContent } from '@/components/text-content/TextContent'
 import { BaseTemplate } from '../base-template/BaseTemplate'
 
-import * as S from './Game.styles'
+import * as S from './GameTemplate.styles'
 import { Showcase } from '@/components/showcase/Showcase'
 import { GameCardProps } from '@/components/game-card/GameCard'
 import { HighlightProps } from '@/components/highlight/Highlight'

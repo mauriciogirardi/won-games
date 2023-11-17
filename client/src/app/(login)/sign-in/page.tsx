@@ -1,5 +1,5 @@
 import { FormSignIn } from '@/components/form-sign-in/FormSignIn'
-import { AuthTemplate } from '@/templates/auth/Auth'
+import { AuthTemplate } from '@/templates/auth/AuthTemplate'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

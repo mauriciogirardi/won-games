@@ -1,5 +1,5 @@
 import { renderWithTheme } from '@/utils/tests/helpers'
-import { GameTemplate, GameTemplateProps } from './Game'
+import { GameTemplate, GameTemplateProps } from './GameTemplate'
 
 import { initialProps } from '@/components/highlight/mocks'
 import { items } from '@/components/game-card-slider/mock'

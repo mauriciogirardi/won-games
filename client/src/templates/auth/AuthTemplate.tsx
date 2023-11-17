@@ -1,7 +1,7 @@
 'use client'
 
 import { Logo } from '@/components/logo/Logo'
-import * as S from './Auth.styles'
+import * as S from './AuthTemplate.styles'
 import { Heading } from '@/components/heading/Heading'
 import { ReactNode } from 'react'
 import Link from 'next/link'

@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+
 import { Heading } from '../heading/Heading'
 import { PaymentCard } from '../payment-options/PaymentOptions'
 import * as S from './CardsList.styles'

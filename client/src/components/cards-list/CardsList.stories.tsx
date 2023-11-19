@@ -3,7 +3,7 @@ import { CardsList } from './CardsList'
 import { mockPaymentOptions } from '../payment-options/mock'
 
 export default {
-  title: 'Card/CardsList',
+  title: 'Profile/CardsList',
   component: CardsList,
   parameters: {
     backgrounds: {

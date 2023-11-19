@@ -14,7 +14,7 @@ export type PathsLinkTypes =
   | typeof PATH_PROFILE_ORDERS
 
 export type ProfileMenuProps = {
-  activeLink?: PathsLinkTypes
+  activeLink?: PathsLinkTypes | string
 }
 
 const menus = [

@@ -1,3 +1,5 @@
+'use client'
+
 import { GameItem, GameItemProps } from '../game-item/GameItem'
 import * as S from './CardList.styles'
 

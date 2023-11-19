@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { FormProfile } from './FormProfile'
 
 export default {
-  title: 'Form/FormProfile',
+  title: 'Profile/FormProfile',
   component: FormProfile,
   parameters: {
     backgrounds: {

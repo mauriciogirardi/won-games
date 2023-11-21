@@ -6,13 +6,13 @@ import { mockGallery } from '@/components/gallery/mock'
 import { mockGameInfo } from '@/components/game-info/mock/mockGameInfo'
 import { mockGameDetails } from '@/components/game-details/mock'
 
-type GameProps = {
-  params: {
-    slug: string
-  }
-}
+// type GameProps = {
+//   params: {
+//     slug: string
+//   }
+// }
 
-export default function Game({ params }: GameProps) {
+export default function Game() {
   const { games } = useGames()
   const { highlight } = useHighlight()
 

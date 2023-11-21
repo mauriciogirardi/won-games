@@ -24,7 +24,7 @@ export const wrapperModifiers = {
 
     ${media.lessThan('medium')`
       &::after {
-        border-bottom: 0.4rem solid ${theme.colors[lineColor]};
+        border-bottom: 0.3rem solid ${theme.colors[lineColor]};
       }
     `}
   `,

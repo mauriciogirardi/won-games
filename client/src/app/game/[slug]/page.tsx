@@ -1,11 +1,10 @@
-import { useGames } from "@/hooks/useGames"
+import { useGames } from '@/hooks/useGames'
 import { useHighlight } from '@/hooks/useHighlight'
 import { GameTemplate } from '@/templates/game/GameTemplate'
 
 import { mockGallery } from '@/components/gallery/mock'
 import { mockGameInfo } from '@/components/game-info/mock/mockGameInfo'
 import { mockGameDetails } from '@/components/game-details/mock'
-
 
 export default function Game() {
   const { games } = useGames()

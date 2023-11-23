@@ -116,7 +116,7 @@ devDependencies:
     specifier: ^0.6.13
     version: 0.6.14(eslint@8.50.0)(typescript@5.2.2)
   husky:
-    specifier: ^8.0.3
+    specifier: ^8.0.0
     version: 8.0.3
   jest:
     specifier: ^29.7.0

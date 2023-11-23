@@ -1,4 +1,4 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "rempx.remEqual": 10
 }

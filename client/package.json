@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install",
     "test": "jest --passWithNoTests --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:coverage": "open coverage/lcov-report/index.html",
@@ -15,7 +14,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate": "npx plop --plopfile generators/plopfile.js",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@styled-icons/fa-brands": "^10.47.0",
@@ -56,7 +56,6 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-storybook": "^0.6.13",
-    "husky": "^8.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-styled-components": "^7.1.1",
@@ -64,6 +63,7 @@
     "plop": "^4.0.0",
     "prettier": "3.0.3",
     "storybook": "^7.5.1",
-    "upgrade": "^1.1.0"
+    "upgrade": "^1.1.0",
+    "husky": "^8.0.0"
   }
 }

@@ -1,4 +1,4 @@
-import { themes } from "../themes";
+import { themes } from '../themes'
 
 export type TypeColors = keyof typeof themes.colors
 export type TypeFontsSizes = keyof typeof themes.font.sizes

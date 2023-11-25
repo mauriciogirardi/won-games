@@ -13,3 +13,11 @@ export const Default: StoryObj<typeof CardList> = {
     total: '$ 405.00'
   }
 }
+
+export const WithButton: StoryObj<typeof CardList> = {
+  args: {
+    items: mockCardList,
+    total: '$ 405.00',
+    hasButton: true
+  }
+}

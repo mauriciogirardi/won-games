@@ -11,4 +11,12 @@ describe('<CardList />', () => {
     expect(screen.getByText('Total')).toBeInTheDocument()
     expect(screen.getAllByRole('heading')).toHaveLength(2)
   })
+
+  it('should render the button', () => {
+    renderWithTheme(
+      <CardList items={mockCardList} total="$ 230.00" hasButton />
+    )
+
+    expect(screen.getByText(/by it now/i)).toBeInTheDocument()
+  })
 })

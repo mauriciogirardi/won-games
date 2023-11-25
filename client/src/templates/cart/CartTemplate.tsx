@@ -7,6 +7,7 @@ import { Showcase } from '@/components/showcase/Showcase'
 import { CardList } from '@/components/card-list/CardList'
 import { Heading } from '@/components/heading/Heading'
 import { Divider } from '@/components/divider/Divider'
+import { Empty } from '@/components/empty/Empty'
 
 import { items } from '@/components/game-card-slider/mock'
 import { initialProps } from '@/components/highlight/mocks'
@@ -14,7 +15,6 @@ import { mockCardList } from '@/components/card-list/mock'
 import { mockPaymentOptions } from '@/components/payment-options/mock'
 
 import * as S from './CartTemplate.styles'
-import { Empty } from '@/components/empty/Empty'
 
 export function CartTemplate() {
   return (

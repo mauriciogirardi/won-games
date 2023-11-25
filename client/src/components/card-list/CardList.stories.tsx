@@ -21,3 +21,5 @@ export const WithButton: StoryObj<typeof CardList> = {
     hasButton: true
   }
 }
+
+export const Empty: StoryObj<typeof CardList> = {}

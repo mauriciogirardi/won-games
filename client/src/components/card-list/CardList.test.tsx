@@ -19,4 +19,10 @@ describe('<CardList />', () => {
 
     expect(screen.getByText(/by it now/i)).toBeInTheDocument()
   })
+
+  it('should render empty if there are no games', () => {
+    renderWithTheme(<CardList />)
+
+    expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument()
+  })
 })

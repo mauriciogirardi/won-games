@@ -8,11 +8,11 @@ import { CardList } from '../card-list/CardList'
 import * as S from './CartDropdown.styles'
 
 export type CartDropdownProps = {
-  items: GameItemProps[]
-  total: string
+  items?: GameItemProps[]
+  total?: string
 }
 
-export function CartDropdown({ items, total }: CartDropdownProps) {
+export function CartDropdown({ items = [], total }: CartDropdownProps) {
   return (
     <S.CartDropdownContainer>
       <Dropdown title={<CartIcon quantity={items.length} />}>

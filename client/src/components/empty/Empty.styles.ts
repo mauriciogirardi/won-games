@@ -14,7 +14,7 @@ export const StyledImage = styled(Image)`
 
 export const Title = styled.h2`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
+    color: ${theme.colors.primary};
     font-size: ${theme.font.sizes.xxlarge};
   `}
 `

@@ -1,13 +1,38 @@
+import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
 import { tint } from 'polished'
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import * as EmptyStyles from '../empty/Empty.styles'
 
-export const CardListContainer = styled.div`
-  ${({ theme }) => css`
+export const CardListContainer = styled.div.withConfig(
+  shouldForwardProps(['isEmpty'])
+)<{ isEmpty: boolean }>`
+  ${({ theme, isEmpty }) => css`
     background-color: ${theme.colors.white};
     display: flex;
     flex-direction: column;
     align-self: start;
+
+    ${isEmpty &&
+    css`
+      ${EmptyStyles.EmptyContainer} {
+        padding-bottom: ${theme.spacings.medium};
+      }
+
+      ${EmptyStyles.StyledImage} {
+        max-width: 20rem;
+        height: 20rem;
+      }
+
+      ${EmptyStyles.Title} {
+        font-size: ${theme.font.sizes.large};
+      }
+
+      ${EmptyStyles.Description} {
+        color: ${theme.colors.black};
+        font-size: ${theme.font.sizes.medium};
+      }
+    `}
   `}
 `
 

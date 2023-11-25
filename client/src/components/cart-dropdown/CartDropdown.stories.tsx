@@ -22,3 +22,5 @@ export const Default: StoryObj<typeof CartDropdown> = {
     total: '$ 240.00'
   }
 }
+
+export const Empty: StoryObj<typeof CartDropdown> = {}

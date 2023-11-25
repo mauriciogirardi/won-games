@@ -7,27 +7,44 @@ import { PATH_CART } from '@/constants/paths'
 import { Button } from '../button/Button'
 
 import * as S from './CardList.styles'
+import { Empty } from '../empty/Empty'
 
 export type CardListProps = {
-  items: GameItemProps[]
-  total: string
+  items?: GameItemProps[]
+  total?: string
   hasButton?: boolean
 }
 
-export function CardList({ items, total, hasButton = false }: CardListProps) {
-  return (
-    <S.CardListContainer>
-      {items?.map((item) => <GameItem key={item.title} {...item} />)}
+export function CardList({
+  items = [],
+  total,
+  hasButton = false
+}: CardListProps) {
+  const isEmpty = items.length > 0
 
-      <S.Footer>
-        {!hasButton && <span>Total</span>}
-        <S.Total>{total}</S.Total>
-        {hasButton && (
-          <Link href={PATH_CART}>
-            <Button as="span">By it now</Button>
-          </Link>
-        )}
-      </S.Footer>
+  return (
+    <S.CardListContainer isEmpty={!isEmpty}>
+      {isEmpty ? (
+        <>
+          {items?.map((item) => <GameItem key={item.title} {...item} />)}
+
+          <S.Footer>
+            {!hasButton && <span>Total</span>}
+            <S.Total>{total}</S.Total>
+            {hasButton && (
+              <Link href={PATH_CART}>
+                <Button as="span">By it now</Button>
+              </Link>
+            )}
+          </S.Footer>
+        </>
+      ) : (
+        <Empty
+          title="Your cart is empty"
+          description="Go back to the store and explore great games and offers."
+          hasLink
+        />
+      )}
     </S.CardListContainer>
   )
 }

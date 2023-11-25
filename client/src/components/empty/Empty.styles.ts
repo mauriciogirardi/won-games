@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
 export const EmptyContainer = styled.main`
@@ -28,3 +29,5 @@ export const Description = styled.p`
     max-width: 70rem;
   `}
 `
+
+export const StyledLink = styled(Link)``

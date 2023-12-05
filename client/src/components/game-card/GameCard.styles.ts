@@ -1,4 +1,6 @@
 import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
+import Link from 'next/link'
+import ImageNext from 'next/image'
 import { darken } from 'polished'
 import styled, { DefaultTheme, css } from 'styled-components'
 
@@ -30,6 +32,7 @@ export const GameCardContainer = styled.article`
     width: 100%;
     height: 100%;
     background-color: ${theme.colors.white};
+    overflow: hidden;
   `}
 `
 
@@ -57,10 +60,9 @@ export const ImageBox = styled.div`
   }
 `
 
-export const Image = styled.img`
+export const Image = styled(ImageNext)`
   width: 100%;
   height: 100%;
-  object-fit: cover;
 `
 
 export const Content = styled.div`
@@ -74,8 +76,9 @@ export const Content = styled.div`
   `}
 `
 
-export const Info = styled.div`
+export const Info = styled(Link)`
   max-width: calc(100% - 2.5rem);
+  text-decoration: none;
 `
 
 export const Title = styled.h3`

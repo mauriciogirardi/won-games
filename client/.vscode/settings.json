@@ -1,4 +1,8 @@
 {
   "editor.formatOnSave": true,
-  "rempx.remEqual": 10
+  "rempx.remEqual": 10,
+  "cSpell.words": [
+    "strapi",
+    "Strapi"
+  ]
 }

@@ -1,6 +1,5 @@
 import { Heading } from '../heading/Heading'
 import * as S from './TextContent.styles'
-import DOMPurify from 'dompurify'
 
 export type TextContentProps = {
   title?: string
@@ -8,8 +7,6 @@ export type TextContentProps = {
 }
 
 export function TextContent({ content, title }: TextContentProps) {
-  const sanitizedContent = DOMPurify?.sanitize(content)
-
   return (
     <S.TextContentContainer>
       {!!title && (
@@ -18,7 +15,7 @@ export function TextContent({ content, title }: TextContentProps) {
         </Heading>
       )}
 
-      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </S.TextContentContainer>
   )
 }

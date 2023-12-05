@@ -1,7 +1,9 @@
-import { GamesTemplate } from '@/templates/games/GamesTemplate'
+import { GamesTemplate } from '@/templates/games/games-template'
 import { mockExploreSidebar } from '@/components/explore-sidebar/mock'
-import { items } from '@/components/game-card-slider/mock'
+import { getGames } from '@/lib/strapi/fetchers/games'
 
-export default function Games() {
-  return <GamesTemplate games={items} filterItems={mockExploreSidebar} />
+export default async function Games() {
+  const games = await getGames()
+
+  return <GamesTemplate games={games} filterItems={mockExploreSidebar} />
 }

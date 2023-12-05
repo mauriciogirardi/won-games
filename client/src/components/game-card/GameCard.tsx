@@ -6,6 +6,8 @@ import { Button } from '../button/Button'
 import { themes } from '@/styles/themes'
 
 import * as S from './GameCard.styles'
+import Link from 'next/link'
+import { PATH_GAME_SLUG } from '@/constants/paths'
 
 export type GameCardProps = {
   title: string
@@ -16,6 +18,7 @@ export type GameCardProps = {
   ribbon?: RibbonTypes
   favorite?: boolean
   onFavorite?: () => void
+  slug: string
 }
 
 export function GameCard({
@@ -26,8 +29,11 @@ export function GameCard({
   promotionalPrice,
   ribbon,
   favorite = false,
-  onFavorite
+  onFavorite,
+  slug
 }: GameCardProps) {
+  const pathSlug = `${PATH_GAME_SLUG.replace(':slug', slug)}`
+
   return (
     <S.GameCardContainer>
       {!!ribbon && (
@@ -36,12 +42,20 @@ export function GameCard({
         </Ribbon>
       )}
 
-      <S.ImageBox>
-        <S.Image src={img} alt={title} />
-      </S.ImageBox>
+      <Link href={pathSlug}>
+        <S.ImageBox>
+          <S.Image
+            src={img}
+            alt={title}
+            width={400}
+            height={300}
+            objectFit="cover"
+          />
+        </S.ImageBox>
+      </Link>
 
       <S.Content>
-        <S.Info>
+        <S.Info href={pathSlug}>
           <S.Title title={title}>{title}</S.Title>
           <S.Developer>{developer}</S.Developer>
         </S.Info>

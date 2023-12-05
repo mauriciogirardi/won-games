@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react'
-import { GamesTemplate } from './GamesTemplate'
+import { GamesTemplate } from './games-template'
 import { renderWithTheme } from '@/utils/tests/helpers'
 import { mockExploreSidebar } from '@/components/explore-sidebar/mock'
 import { ReactNode } from 'react'

@@ -13,8 +13,8 @@ export type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
 export type GameDetailsProps = {
   platforms: Platform[]
   developer: string
-  releaseDate: string
-  rating: Rating
+  releaseDate: string | null
+  rating: Rating | null
   genres: string[]
   publisher: string
 }
@@ -27,7 +27,7 @@ export function GameDetails({
   genres,
   publisher
 }: GameDetailsProps) {
-  const formattedRating = renderRating(rating)
+  const formattedRating = rating ? renderRating(rating) : 0
   const getRatingInNumber =
     formattedRating === 'FREE' ? 0 : (formattedRating as number)
   const colorRating = getRatingColor(getRatingInNumber)
@@ -46,10 +46,12 @@ export function GameDetails({
           <S.Description>{developer}</S.Description>
         </S.Block>
 
-        <S.Block>
-          <S.Label>Release Date</S.Label>
-          <S.Description>{formattedDate(releaseDate)}</S.Description>
-        </S.Block>
+        {releaseDate && (
+          <S.Block>
+            <S.Label>Release Date</S.Label>
+            <S.Description>{formattedDate(releaseDate)}</S.Description>
+          </S.Block>
+        )}
 
         <S.Block>
           <S.Label>Platforms</S.Label>

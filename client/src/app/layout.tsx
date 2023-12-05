@@ -5,9 +5,8 @@ import { Providers } from './providers'
 export const metadata: Metadata = {
   title: 'Won Games',
   description: 'The best Game Stores in the world!',
-  colorScheme: 'dark',
   icons: '/img/logo.png',
-  keywords: 'Games, Actions'
+  keywords: ['Games, Actions']
 }
 
 export default function RootLayout({

@@ -17,7 +17,8 @@ const initialValues = {
   title: 'Read Dead Redemption',
   developer: 'Rackstar Games',
   price: '$215.00',
-  img: '/img/red-dead-img.png'
+  img: '/img/red-dead-img.png',
+  slug: 'read_dead_redemption'
 }
 
 export const Default: StoryObj<typeof GameCard> = {

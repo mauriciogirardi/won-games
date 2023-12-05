@@ -15,6 +15,7 @@ export const GamesContainer = styled(Container)`
 export const ShowMore = styled.div`
   ${({ theme }) => css`
     text-align: center;
+    color: ${theme.colors.white};
     padding: ${theme.spacings.medium};
     text-transform: uppercase;
     font-weight: bold;

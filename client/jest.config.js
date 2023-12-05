@@ -11,7 +11,9 @@ module.exports = {
     '!src/lib/registry.tsx',
     '!src/@types/**',
     '!src/utils/**',
-    '!src/hooks/**'
+    '!src/hooks/**',
+    '!src/env.ts',
+    '!src/lib/strapi/**/*.ts',
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],

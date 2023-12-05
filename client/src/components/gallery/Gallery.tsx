@@ -6,10 +6,11 @@ import SlickSlider from 'react-slick'
 import { X, ArrowLeft, ArrowRight } from 'lucide-react'
 import { Slider, SliderSettings } from '../slider/Slider'
 import * as S from './Gallery.styles'
+import Image from 'next/image'
 
 export type GalleryImage = {
   src: string
-  label: string
+  label: string | null
 }
 export type GalleryProps = {
   items: GalleryImage[]
@@ -82,12 +83,16 @@ export function Gallery({ items }: GalleryProps) {
     <S.GalleryContainer>
       <Slider ref={refSlider} settings={settings}>
         {items?.map((item, index) => (
-          <img
+          <Image
             onClick={() => handleOpenModal(index)}
             role="button"
             key={`thumb-${index}`}
             src={item.src}
             alt={`Thumb - ${item.label}`}
+            width={293}
+            height={225}
+            objectFit="cover"
+            quality={100}
           />
         ))}
       </Slider>
@@ -104,7 +109,15 @@ export function Gallery({ items }: GalleryProps) {
         <S.Content>
           <Slider ref={refSlider} settings={modalSettings}>
             {items?.map((item, index) => (
-              <img key={`gallery-${index}`} src={item.src} alt={item.label} />
+              <Image
+                key={`gallery-${index}`}
+                src={item.src}
+                alt={item.label || ''}
+                width={1200}
+                height={677}
+                objectFit="cover"
+                quality={100}
+              />
             ))}
           </Slider>
         </S.Content>

@@ -6,7 +6,8 @@ const props = {
   title: 'Read Dead Redemption',
   developer: 'Rackstar Games',
   price: '215,00',
-  img: '/red-dead-img.png'
+  img: '/red-dead-img.png',
+  slug: 'read_dead_redemption'
 }
 
 describe('<GameCard />', () => {
@@ -23,6 +24,9 @@ describe('<GameCard />', () => {
     expect(
       screen.getByRole('img', { name: /Read Dead Redemption/i })
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /Rackstar Games/i })
+    ).toHaveAttribute('href', `/game/${props.slug}`)
   })
 
   it('should render price in label', () => {

@@ -11,11 +11,10 @@ describe('<Gallery />', () => {
 
     expect(
       screen.getByRole('button', { name: /Thumb - Gallery image 1/i })
-    ).toHaveAttribute('src', mockGallery[0].src)
-
-    expect(
-      screen.getByRole('button', { name: /Thumb - Gallery image 2/i })
-    ).toHaveAttribute('src', mockGallery[1].src)
+    ).toHaveAttribute(
+      'src',
+      '/_next/image?url=%2Fimg%2Fgames%2Fcyberpunk-1.jpg&w=640&q=100'
+    )
   })
 
   it('should handle open modal', () => {

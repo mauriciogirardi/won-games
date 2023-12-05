@@ -7,7 +7,7 @@ import * as S from './Banner.styles'
 export type BannerProps = {
   img: string
   title: string
-  subTitle: string
+  subtitle: string
   buttonLabel: string
   buttonLink: string
   ribbon?: RibbonTypes
@@ -15,7 +15,7 @@ export type BannerProps = {
 
 export function Banner({
   title,
-  subTitle,
+  subtitle,
   img,
   buttonLabel,
   buttonLink,
@@ -32,7 +32,7 @@ export function Banner({
 
       <S.Caption>
         <S.Title>{title}</S.Title>
-        <S.Subtitle dangerouslySetInnerHTML={{ __html: subTitle }} />
+        <S.Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
         <Button as="a" href={buttonLink}>
           {buttonLabel}
         </Button>

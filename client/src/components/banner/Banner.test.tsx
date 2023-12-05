@@ -5,7 +5,7 @@ import { renderWithTheme } from '@/utils/tests/helpers'
 const bannerProps = {
   img: 'https://source.unsplash.com/user/mauriciogirardi/1042x580',
   title: 'Defy death',
-  subTitle: '<p>Play the new <strong>CrashLands</strong> season</p>',
+  subtitle: '<p>Play the new <strong>CrashLands</strong> season</p>',
   buttonLink: '/games/defy-death',
   buttonLabel: 'Buy now'
 }

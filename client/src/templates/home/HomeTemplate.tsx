@@ -36,7 +36,7 @@ export function HomeTemplate({
     <BaseTemplate>
       <Container>
         <S.SectionBanner>
-          <Suspense fallback={<p>Loading Banners</p>}>
+          <Suspense>
             <BannerSlider items={banners} />
           </Suspense>
         </S.SectionBanner>

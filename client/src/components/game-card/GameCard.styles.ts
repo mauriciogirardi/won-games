@@ -37,7 +37,7 @@ export const GameCardContainer = styled.article`
 `
 
 export const ImageBox = styled.div`
-  height: 14rem;
+  height: 17rem;
   width: 100%;
   background-color: #f6f7f8;
   background-image: linear-gradient(

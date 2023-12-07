@@ -9,6 +9,8 @@ export const GameCardSliderContainer = styled('section').withConfig(
   shouldForwardProps(['color', 'slideCount', 'currentSlide'])
 )<GameCardSliderContainerProps>`
   ${({ theme, color }) => css`
+    margin-top: ${theme.spacings.medium};
+
     ${media.lessThan('huge')`
       overflow-x: hidden;
     `}

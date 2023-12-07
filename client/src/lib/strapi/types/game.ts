@@ -1,14 +1,17 @@
 import {
-  AtributesCategory,
-  AtributesCover,
-  AtributesDeveloper,
-  AtributesGallery,
-  AtributesPlatform,
-  AtributesPublisher,
-  RatingTypes
+  AttributesCategory,
+  AttributesDeveloper,
+  AttributesGallery,
+  AttributesPlatform,
+  AttributesPublisher,
+  AttributesCover,
+  RatingTypes,
+  Pagination
 } from '.'
 
-export type AtributesGame = {
+// TYPE GAME
+
+export type AttributesGame = {
   attributes: {
     name: string
     slug: string
@@ -17,22 +20,40 @@ export type AtributesGame = {
     description: string
     releaseDate: string | null
     rating: RatingTypes | null
-    cover: AtributesCover | null
-    developers: AtributesDeveloper
-    gallery: AtributesGallery
-    publisher: AtributesPublisher | null
-    categories: AtributesCategory
-    platforms: AtributesPlatform
+    cover: AttributesCover | null
+    developers: AttributesDeveloper
+    gallery: AttributesGallery
+    publisher: AttributesPublisher | null
+    categories: AttributesCategory
+    platforms: AttributesPlatform
   }
 }
 
 export type GameGraphQLResponse = {
   data: {
     games: {
-      data: AtributesGame[]
+      data: AttributesGame[]
     }
   }
   variables: {
     slug: string
   }
+}
+
+// TYPES GAMES
+
+export type AttributesGames = {
+  attributes: Pick<
+    AttributesGame['attributes'],
+    'name' | 'slug' | 'price' | 'cover' | 'developers'
+  >
+}
+
+export type GamesGraphQLResponse = {
+  data: {
+    games: {
+      data: AttributesGames[]
+    }
+  }
+  variables: Pagination
 }

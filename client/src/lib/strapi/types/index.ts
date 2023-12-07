@@ -18,7 +18,7 @@ export type StrapiFetchResponse<T> = {
   status: number
 }
 
-export type AtributesCover = {
+export type AttributesCover = {
   data: {
     attributes: {
       src: string
@@ -26,7 +26,7 @@ export type AtributesCover = {
   }
 }
 
-export type AtributesDeveloper = {
+export type AttributesDeveloper = {
   data: [
     {
       attributes: {
@@ -36,7 +36,7 @@ export type AtributesDeveloper = {
   ]
 }
 
-export type AtributesGallery = {
+export type AttributesGallery = {
   data: [
     {
       attributes: {
@@ -47,7 +47,7 @@ export type AtributesGallery = {
   ]
 }
 
-export type AtributesPublisher = {
+export type AttributesPublisher = {
   data: {
     attributes: {
       name: string
@@ -55,7 +55,7 @@ export type AtributesPublisher = {
   }
 }
 
-export type AtributesCategory = {
+export type AttributesCategory = {
   data: [
     {
       attributes: {
@@ -65,7 +65,7 @@ export type AtributesCategory = {
   ]
 }
 
-export type AtributesPlatform = {
+export type AttributesPlatform = {
   data: [
     {
       attributes: {
@@ -73,4 +73,11 @@ export type AtributesPlatform = {
       }
     }
   ]
+}
+
+export type Pagination = {
+  limit?: number
+  page?: number
+  pageSize?: number
+  start?: number
 }

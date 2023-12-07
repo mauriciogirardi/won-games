@@ -2,7 +2,6 @@
 
 import { Suspense } from 'react'
 
-import * as S from './HomeTemplate.styles'
 import { Showcase } from '@/components/showcase/Showcase'
 import { Container } from '@/components/container/Container'
 import { BannerProps } from '@/components/banner/Banner'
@@ -11,15 +10,23 @@ import { BaseTemplate } from '../base-template/BaseTemplate'
 import { GameCardProps } from '@/components/game-card/GameCard'
 import { HighlightProps } from '@/components/highlight/Highlight'
 
+import * as S from './HomeTemplate.styles'
+
+type Highlight = {
+  title: string
+  highlight: HighlightProps | null
+}
+
 export type HomeProps = {
   banners: BannerProps[]
   newGames: GameCardProps[]
-  mostPopularHighlight: HighlightProps
+  mostPopularHighlight: Highlight
   mostPopularGames: GameCardProps[]
   upcomingGames: GameCardProps[]
-  upcomingHighlight: HighlightProps
+  upcomingHighlight: Highlight
   freeGames: GameCardProps[]
-  freeGamesHighlight: HighlightProps
+  freeGamesHighlight: Highlight
+  newGamesHighlight: Highlight
 }
 
 export function HomeTemplate({
@@ -30,7 +37,8 @@ export function HomeTemplate({
   mostPopularGames,
   upcomingHighlight,
   freeGamesHighlight,
-  mostPopularHighlight
+  mostPopularHighlight,
+  newGamesHighlight
 }: HomeProps) {
   return (
     <BaseTemplate>
@@ -43,31 +51,36 @@ export function HomeTemplate({
       </Container>
 
       <S.SectionNews>
-        <Suspense fallback={<p>Loading New Games</p>}>
-          <Showcase title="News" games={newGames} color="black" />
+        <Suspense>
+          <Showcase
+            title={newGamesHighlight.title}
+            games={newGames}
+            color="black"
+            highlight={newGamesHighlight.highlight}
+          />
         </Suspense>
       </S.SectionNews>
 
-      <Suspense fallback={<p>Loading Most Popular</p>}>
+      <Suspense>
         <Showcase
-          title="Most popular"
-          highlight={mostPopularHighlight}
+          title={mostPopularHighlight.title}
+          highlight={mostPopularHighlight.highlight}
           games={mostPopularGames}
         />
       </Suspense>
 
-      <Suspense fallback={<p>Loading Upcoming</p>}>
+      <Suspense>
         <Showcase
-          title="Upcoming"
+          title={upcomingHighlight.title}
           games={upcomingGames}
-          highlight={upcomingHighlight}
+          highlight={upcomingHighlight.highlight}
         />
       </Suspense>
 
-      <Suspense fallback={<p>Loading Free Games</p>}>
+      <Suspense>
         <Showcase
-          title="Free games"
-          highlight={freeGamesHighlight}
+          title={freeGamesHighlight.title}
+          highlight={freeGamesHighlight.highlight}
           games={freeGames}
         />
       </Suspense>

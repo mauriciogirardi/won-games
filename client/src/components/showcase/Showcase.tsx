@@ -9,7 +9,7 @@ import * as S from './Showcase.styles'
 export type ShowcaseProps = {
   title?: string
   color?: 'white' | 'black'
-  highlight?: HighlightProps
+  highlight?: HighlightProps | null
   games?: GameCardProps[]
   mt?: string
 }
@@ -28,7 +28,7 @@ export function Showcase({
           {title}
         </Heading>
       )}
-      {!!highlight && <Highlight {...highlight} />}
+      {highlight?.title && highlight.subtitle && <Highlight {...highlight} />}
       {!!games && <GameCardSlider items={games} color={color} />}
     </S.ShowcaseContainer>
   )

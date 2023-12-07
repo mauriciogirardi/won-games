@@ -4,11 +4,11 @@ import { Button } from '../button/Button'
 import * as S from './Highlight.styles'
 
 export type HighlightProps = {
-  title: string
-  subtitle: string
-  buttonLabel: string
-  buttonLink: string
-  backgroundImage: string
+  title?: string
+  subtitle?: string
+  buttonLabel?: string
+  buttonLink?: string
+  backgroundImage?: string
   floatImage?: string
   alignment?: 'right' | 'left'
 }

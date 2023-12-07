@@ -7,15 +7,21 @@ import { items as banners } from '@/components/banner-slider/mock/index'
 import { items as gameCards } from '@/components/game-card-slider/mock/index'
 import { initialProps as highlights } from '@/components/highlight/mocks'
 
+const initialHighlights = {
+  title: 'Title',
+  highlight: highlights
+}
+
 const initialProps: HomeProps = {
   banners,
   newGames: gameCards,
-  mostPopularHighlight: highlights,
+  mostPopularHighlight: initialHighlights,
   mostPopularGames: gameCards,
   upcomingGames: gameCards,
-  upcomingHighlight: highlights,
+  upcomingHighlight: initialHighlights,
   freeGames: gameCards,
-  freeGamesHighlight: highlights
+  freeGamesHighlight: initialHighlights,
+  newGamesHighlight: initialHighlights
 }
 
 jest.mock('@/components/showcase/Showcase', () => {

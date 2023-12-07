@@ -1,21 +1,20 @@
-import {
-  AtributesGames,
-  GamesGraphQLResponse,
-  Pagination
-} from '../types/games'
+import { AttributesGames, GamesGraphQLResponse } from '../types/game'
 import { baseUrl, strapiFetch } from '..'
 import { formatCurrency } from '@/utils/format-currency'
-import { getGamesQuery } from '../queries/games'
+import { getGamesQuery } from '../queries/game'
 import { TAGS } from '../constants'
-import { AtributesGame, GameGraphQLResponse } from '../types/game'
+import { AttributesGame, GameGraphQLResponse } from '../types/game'
 import { getGameQuery } from '../queries/game'
 import { Platform } from '@/components/game-details/GameDetails'
+import { Pagination } from '../types'
 
-function transformeDataGames(games: AtributesGames[]) {
+function transformeDataGames(games: AttributesGames[]) {
   return games.map(
     ({ attributes: { name, price, cover, developers, slug } }) => ({
       title: name,
-      img: `${baseUrl}${cover.data.attributes.src}`,
+      img: cover
+        ? `${baseUrl}${cover.data.attributes.src}`
+        : '/img/image-not-found.png',
       price: formatCurrency(price),
       developer: developers.data[0].attributes.name,
       slug
@@ -23,7 +22,7 @@ function transformeDataGames(games: AtributesGames[]) {
   )
 }
 
-function transformeDataGame(game: AtributesGame) {
+function transformeDataGame(game: AttributesGame) {
   const { attributes } = game
   const {
     name,

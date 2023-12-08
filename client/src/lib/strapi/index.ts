@@ -1,16 +1,16 @@
-import { env } from '@/env'
 import { StrapiFetchResponse, StrapiFetchType } from './types'
-
-export const baseUrl = env.BASE_URL_STRAPI
-const endpoint = `${baseUrl}/graphql/`
+import { BASE_URL } from '@/constants'
 
 export async function strapiFetch<T>({
   cache,
   query,
   headers,
   next,
-  variables
+  variables,
+  baseUrl = BASE_URL
 }: StrapiFetchType<T>): Promise<StrapiFetchResponse<T>> {
+  const endpoint = `${baseUrl}/graphql/`
+
   try {
     const result = await fetch(endpoint, {
       method: 'POST',

@@ -44,13 +44,7 @@ export function GameCard({
 
       <Link href={pathSlug}>
         <S.ImageBox>
-          <S.Image
-            src={img}
-            alt={title}
-            width={400}
-            height={300}
-            objectFit="cover"
-          />
+          <S.Image src={img} alt={title} width={400} height={300} />
         </S.ImageBox>
       </Link>
 

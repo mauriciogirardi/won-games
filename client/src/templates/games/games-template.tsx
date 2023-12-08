@@ -3,27 +3,33 @@
 import { ChevronDown } from 'lucide-react'
 import { Suspense } from 'react'
 
-import { Grid } from '@/components/grid/Grid'
-import { BaseTemplate } from '../base-template/BaseTemplate'
-import { GameCard, GameCardProps } from '@/components/game-card/GameCard'
 import {
   ExploreSidebar,
   ItemSidebarProps
 } from '@/components/explore-sidebar/ExploreSidebar'
+import { BaseTemplate } from '../base-template/BaseTemplate'
+import { GameCard, GameCardProps } from '@/components/game-card/GameCard'
+import { Grid } from '@/components/grid/Grid'
 
 import * as S from './games-template.styles'
+import { Pagination } from '@/components/pagination/pagination'
 
 export type GamesTemplateProps = {
   games?: GameCardProps[]
   filterItems: ItemSidebarProps[]
+  page: number
+  pageSize: number
+  total: number
 }
 
-export function GamesTemplate({ games = [], filterItems }: GamesTemplateProps) {
+export async function GamesTemplate({
+  filterItems,
+  games,
+  page,
+  pageSize,
+  total
+}: GamesTemplateProps) {
   const handleFilter = () => {
-    return
-  }
-
-  const handleShowMore = () => {
     return
   }
 
@@ -39,10 +45,7 @@ export function GamesTemplate({ games = [], filterItems }: GamesTemplateProps) {
             </Suspense>
           </Grid>
 
-          <S.ShowMore role="button" onClick={handleShowMore}>
-            <p>Show More</p>
-            <ChevronDown />
-          </S.ShowMore>
+          <Pagination page={page} pageSize={pageSize} total={total} />
         </section>
       </S.GamesContainer>
     </BaseTemplate>

@@ -6,9 +6,12 @@ export const env = createEnv({
     BASE_URL_STRAPI: z.string().url()
   },
 
-  client: {},
+  client: {
+    NEXT_PUBLIC_BASE_URL_STRAPI: z.string().url()
+  },
 
   runtimeEnv: {
-    BASE_URL_STRAPI: process.env.BASE_URL_STRAPI
+    BASE_URL_STRAPI: process.env.BASE_URL_STRAPI,
+    NEXT_PUBLIC_BASE_URL_STRAPI: process.env.NEXT_PUBLIC_BASE_URL_STRAPI
   }
 })

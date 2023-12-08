@@ -1,7 +1,7 @@
 import { HighlightProps } from '@/components/highlight/Highlight'
 import { HighlightCommon } from '../../types/home'
-import { baseUrl } from '../..'
 import { IMAGE_DEFAULT } from '../../constants'
+import { BASE_URL } from '@/constants'
 
 export function transformeDataHighlight(
   title?: string,
@@ -12,9 +12,9 @@ export function transformeDataHighlight(
     highlight: {
       title: data?.title,
       backgroundImage:
-        `${baseUrl}${data?.background.data.attributes.src}` || IMAGE_DEFAULT,
+        `${BASE_URL}${data?.background.data.attributes.src}` || IMAGE_DEFAULT,
       floatImage:
-        `${baseUrl}${data?.floatImage.data.attributes.src}` || IMAGE_DEFAULT,
+        `${BASE_URL}${data?.floatImage.data.attributes.src}` || IMAGE_DEFAULT,
       buttonLabel: data?.buttonLabel,
       buttonLink: data?.buttonLink,
       subtitle: data?.subtitle,

@@ -91,7 +91,6 @@ export function Gallery({ items }: GalleryProps) {
             alt={`Thumb - ${item.label}`}
             width={293}
             height={225}
-            objectFit="cover"
             quality={100}
           />
         ))}
@@ -115,7 +114,6 @@ export function Gallery({ items }: GalleryProps) {
                 alt={item.label || ''}
                 width={1200}
                 height={677}
-                objectFit="cover"
                 quality={100}
               />
             ))}

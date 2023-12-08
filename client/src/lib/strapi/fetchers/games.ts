@@ -1,29 +1,28 @@
 import { transformeDataGameDetails } from './utils/transformeDataGameDetails'
 import { transformeDataGames } from './utils/transformeDataGames'
-import { GameGraphQLResponse } from '../types/game'
+import { GameGraphQLResponse, GetGamesProps } from '../types/game'
 import { GamesGraphQLResponse } from '../types/game'
 import { getGamesQuery } from '../queries/game'
 import { getGameQuery } from '../queries/game'
 import { strapiFetch } from '..'
-import { Pagination } from '../types'
 import { TAGS } from '../constants'
 
-export async function getGames({ limit = 9 }: Pagination = {}) {
+export async function getGames({ pagination }: GetGamesProps = {}) {
   const response = await strapiFetch<GamesGraphQLResponse>({
     query: getGamesQuery,
     next: { tags: [TAGS.GAMES_EXPLORE], revalidate: 60 },
     variables: {
-      limit
+      pageSize: pagination?.pageSize || 15,
+      page: pagination?.page || 1
     }
   })
 
-  const games = response.body.data.games.data
+  const { data, meta } = response.body.data.games
 
-  if (!games) {
-    return []
+  return {
+    games: transformeDataGames(data),
+    pagination: meta.pagination
   }
-
-  return transformeDataGames(games)
 }
 
 export async function getGame(slug: string) {

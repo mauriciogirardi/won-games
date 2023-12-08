@@ -11,6 +11,22 @@ import {
 
 // TYPE GAME
 
+export type Game = {
+  games: {
+    title: string
+    img: string
+    price: string
+    developer: string
+    slug: string
+  }[]
+  pagination: {
+    total: number
+    pageCount: number
+    page: number
+    pageSize: number
+  }
+}
+
 export type AttributesGame = {
   attributes: {
     name: string
@@ -49,11 +65,24 @@ export type AttributesGames = {
   >
 }
 
+export type GetGamesProps = {
+  pagination?: Pagination
+}
+
 export type GamesGraphQLResponse = {
   data: {
     games: {
       data: AttributesGames[]
+      meta: {
+        pagination: {
+          total: number
+          pageCount: number
+          page: number
+          pageSize: number
+        }
+      }
     }
   }
+
   variables: Pagination
 }

@@ -17,7 +17,7 @@ type GameProps = {
 }
 
 export async function generateStaticParams() {
-  const games = await getGames()
+  const { games } = await getGames()
   return games?.map(({ slug }) => ({ slug }))
 }
 

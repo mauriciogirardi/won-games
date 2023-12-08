@@ -1,8 +1,8 @@
 import { formatCurrency } from '@/utils/format-currency'
 import { AttributesGame } from '../../types/game'
-import { baseUrl } from '../..'
 import { Platform } from '@/components/game-details/GameDetails'
 import { IMAGE_DEFAULT } from '../../constants'
+import { BASE_URL } from '@/constants'
 
 export function transformeDataGameDetails(game: AttributesGame) {
   const { attributes } = game
@@ -24,7 +24,7 @@ export function transformeDataGameDetails(game: AttributesGame) {
 
   return {
     title: name,
-    img: cover ? `${baseUrl}${cover.data.attributes.src}` : IMAGE_DEFAULT,
+    img: cover ? `${BASE_URL}${cover.data.attributes.src}` : IMAGE_DEFAULT,
     price: formatCurrency(price),
     developer: developers.data[0].attributes.name,
     slug,
@@ -33,7 +33,7 @@ export function transformeDataGameDetails(game: AttributesGame) {
     shortDescription,
     releaseDate,
     gallery: gallery.data.map(({ attributes }) => ({
-      src: `${baseUrl}${attributes.src}` || IMAGE_DEFAULT,
+      src: `${BASE_URL}${attributes.src}` || IMAGE_DEFAULT,
       label: attributes.label
     })),
     publisher: publisher?.data.attributes.name || '',

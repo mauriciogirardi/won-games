@@ -1,7 +1,7 @@
 import { BannerProps } from '@/components/banner/Banner'
-import { baseUrl } from '../..'
 import { IMAGE_DEFAULT } from '../../constants'
 import { AttributesBanner } from '../../types/home'
+import { BASE_URL } from '@/constants'
 
 export function transformeDataBanners(banners: AttributesBanner[]) {
   return banners.map(({ attributes }) => {
@@ -12,7 +12,7 @@ export function transformeDataBanners(banners: AttributesBanner[]) {
       subtitle,
       buttonLabel: button.label,
       buttonLink: button.link,
-      img: `${baseUrl}${image.data.attributes.url}` || IMAGE_DEFAULT,
+      img: `${BASE_URL}${image.data.attributes.url}` || IMAGE_DEFAULT,
       ribbon: {
         name: ribbon?.text,
         color: ribbon?.color,

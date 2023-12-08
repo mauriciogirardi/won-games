@@ -11,6 +11,7 @@ export type StrapiFetchType<T> = {
   next?: NextFetchRequestConfig
   variables?: ExtractVariables<T>
   path?: string
+  baseUrl?: string
 }
 
 export type StrapiFetchResponse<T> = {

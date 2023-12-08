@@ -1,87 +1,38 @@
-import { BannerProps } from '@/components/banner/Banner'
-import { baseUrl, strapiFetch } from '..'
-import {
-  AttributesCommon,
-  HighlightCommon,
-  HomeGraphQLResponse
-} from '../types/home'
+import { transformeDataHighlight } from './utils/transformeDataHighlight'
+import { transformeDataBanners } from './utils/transformeDataBanners'
+import { transformeDataGames } from './utils/transformeDataGames'
+import { HomeGraphQLResponse } from '../types/home'
 import { getHomeQuery } from '../queries/home'
-import { GameCardProps } from '@/components/game-card/GameCard'
-import { formatCurrency } from '@/utils/format-currency'
-import { HighlightProps } from '@/components/highlight/Highlight'
+import { strapiFetch } from '..'
 
-function parsedGames(data: AttributesCommon[]) {
-  return data.map(({ attributes }) => {
-    const { cover, developers, name, price, slug } = attributes
-    return {
-      price: formatCurrency(price),
-      slug,
-      title: name,
-      img: `${baseUrl}${cover.data.attributes.src}`,
-      developer: developers.data[0].attributes.name
-    } as GameCardProps
-  })
-}
-
-function parsedHighlight(title: string, data: HighlightCommon | null) {
-  return {
-    title,
-    highlight: {
-      title: data?.title,
-      backgroundImage: `${baseUrl}${data?.background.data.attributes.src}`,
-      floatImage: `${baseUrl}${data?.floatImage.data.attributes.src}`,
-      buttonLabel: data?.buttonLabel,
-      buttonLink: data?.buttonLink,
-      subtitle: data?.subtitle,
-      alignment: data?.alignment
-    } as HighlightProps
-  }
-}
-
-function transformeDataBanners(home: HomeGraphQLResponse['data']) {
+function parsedDataBanners(home: HomeGraphQLResponse['data']) {
   const { banners, freeGames, newGames, sections, upcomingGames } = home
   const sectionsData = sections.data.attributes
 
-  const parsedBanners = banners.data.map(({ attributes }) => {
-    const { button, image, ribbon, subtitle, title } = attributes
-
-    return {
-      title,
-      subtitle,
-      buttonLabel: button.label,
-      buttonLink: button.link,
-      img: `${baseUrl}${image.data.attributes.url}`,
-      ribbon: {
-        name: ribbon?.text,
-        color: ribbon?.color,
-        size: ribbon?.size
-      }
-    } as BannerProps
-  })
-
-  const parsedFreeGames = parsedGames(freeGames.data)
-  const parsedNewGames = parsedGames(newGames.data)
-  const parsedUpcomingGames = parsedGames(upcomingGames.data)
-  const parsedMostPopularGames = parsedGames(
+  const parsedBanners = transformeDataBanners(banners.data)
+  const parsedFreeGames = transformeDataGames(freeGames.data)
+  const parsedNewGames = transformeDataGames(newGames.data)
+  const parsedUpcomingGames = transformeDataGames(upcomingGames.data)
+  const parsedMostPopularGames = transformeDataGames(
     sectionsData.popularGames.games.data
   )
 
-  const parsedFreeGamesHighlight = parsedHighlight(
+  const parsedFreeGamesHighlight = transformeDataHighlight(
     sectionsData.freeGames.title,
     sectionsData.freeGames.highlight
   )
 
-  const parsedMostPopularHighlight = parsedHighlight(
+  const parsedMostPopularHighlight = transformeDataHighlight(
     sectionsData.popularGames.title,
     sectionsData.popularGames.highlight
   )
 
-  const parsedUpcomingHighlight = parsedHighlight(
+  const parsedUpcomingHighlight = transformeDataHighlight(
     sectionsData.upcomingGames.title,
     sectionsData.upcomingGames.highlight
   )
 
-  const parsedNewGamesHighlight = parsedHighlight(
+  const parsedNewGamesHighlight = transformeDataHighlight(
     sectionsData.newGames.title,
     sectionsData.newGames.highlight
   )
@@ -110,5 +61,5 @@ export async function getDataHome() {
 
   const response = body.data
 
-  return transformeDataBanners(response)
+  return parsedDataBanners(response)
 }

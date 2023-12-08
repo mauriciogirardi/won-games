@@ -1,21 +1,30 @@
-import { renderWithTheme } from '@/utils/tests/helpers'
-import { GameTemplate, GameTemplateProps } from './GameTemplate'
-
-import { initialProps } from '@/components/highlight/mocks'
-import { items } from '@/components/game-card-slider/mock'
-import { mockGallery } from '@/components/gallery/mock'
-import { mockGameInfo } from '@/components/game-info/mock/mockGameInfo'
-import { mockGameDetails } from '@/components/game-details/mock'
 import { screen } from '@testing-library/react'
+
+import { GameTemplate, GameTemplateProps } from './GameTemplate'
+import { renderWithTheme } from '@/utils/tests/helpers'
+
+import { initialProps as highlight } from '@/components/highlight/mocks'
+import { mockGameDetails } from '@/components/game-details/mock'
+import { items as games } from '@/components/game-card-slider/mock'
+import { mockGameInfo } from '@/components/game-info/mock/mockGameInfo'
+import { mockGallery } from '@/components/gallery/mock'
 
 const props: GameTemplateProps = {
   cover: 'bg-image.jpg',
   gameInfo: mockGameInfo,
   gallery: mockGallery,
-  highlight: initialProps,
-  games: items,
   gameDetails: mockGameDetails,
-  content: '<p>Content HTML</p>'
+  content: '<p>Content HTML</p>',
+  recommended: {
+    title: 'You may like these games',
+    games,
+    highlight
+  },
+  upcoming: {
+    title: 'Upcoming Games',
+    games,
+    highlight
+  }
 }
 
 jest.mock('@/components/gallery/Gallery', () => {

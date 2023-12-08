@@ -1,3 +1,5 @@
+import { AttributesGames } from './game'
+
 export type AttributesBanner = {
   attributes: {
     title: string
@@ -23,30 +25,6 @@ export type AttributesBanner = {
   }
 }
 
-export type AttributesCommon = {
-  attributes: {
-    name: string
-    slug: string
-    price: number
-    cover: {
-      data: {
-        attributes: {
-          src: string
-        }
-      }
-    }
-    developers: {
-      data: [
-        {
-          attributes: {
-            name: string
-          }
-        }
-      ]
-    }
-  }
-}
-
 export type HighlightCommon = {
   title: string
   subtitle: string
@@ -69,9 +47,9 @@ export type HighlightCommon = {
   }
 }
 
-export type AttributesNewGame = AttributesCommon
-export type AttributesUpcomingGame = AttributesCommon
-export type AttributesFreeGame = AttributesCommon
+export type AttributesNewGame = AttributesGames
+export type AttributesUpcomingGame = AttributesGames
+export type AttributesFreeGame = AttributesGames
 export type AttributesSections = {
   newGames: {
     title: string
@@ -81,7 +59,7 @@ export type AttributesSections = {
     title: string
     highlight: HighlightCommon | null
     games: {
-      data: AttributesCommon[]
+      data: AttributesGames[]
     }
   }
   freeGames: {

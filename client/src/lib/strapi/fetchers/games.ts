@@ -1,66 +1,12 @@
-import { AttributesGames, GamesGraphQLResponse } from '../types/game'
-import { baseUrl, strapiFetch } from '..'
-import { formatCurrency } from '@/utils/format-currency'
+import { transformeDataGameDetails } from './utils/transformeDataGameDetails'
+import { transformeDataGames } from './utils/transformeDataGames'
+import { GameGraphQLResponse } from '../types/game'
+import { GamesGraphQLResponse } from '../types/game'
 import { getGamesQuery } from '../queries/game'
-import { TAGS } from '../constants'
-import { AttributesGame, GameGraphQLResponse } from '../types/game'
 import { getGameQuery } from '../queries/game'
-import { Platform } from '@/components/game-details/GameDetails'
+import { strapiFetch } from '..'
 import { Pagination } from '../types'
-
-function transformeDataGames(games: AttributesGames[]) {
-  return games.map(
-    ({ attributes: { name, price, cover, developers, slug } }) => ({
-      title: name,
-      img: cover
-        ? `${baseUrl}${cover.data.attributes.src}`
-        : '/img/image-not-found.png',
-      price: formatCurrency(price),
-      developer: developers.data[0].attributes.name,
-      slug
-    })
-  )
-}
-
-function transformeDataGame(game: AttributesGame) {
-  const { attributes } = game
-  const {
-    name,
-    slug,
-    categories,
-    cover,
-    description,
-    developers,
-    gallery,
-    platforms,
-    price,
-    publisher,
-    rating,
-    releaseDate,
-    shortDescription
-  } = attributes
-
-  return {
-    title: name,
-    img: cover ? `${baseUrl}${cover.data.attributes.src}` : '',
-    price: formatCurrency(price),
-    developer: developers.data[0].attributes.name,
-    slug,
-    content: description,
-    rating,
-    shortDescription,
-    releaseDate,
-    gallery: gallery.data.map(({ attributes }) => ({
-      src: `${baseUrl}${attributes.src}`,
-      label: attributes.label
-    })),
-    publisher: publisher?.data.attributes.name || '',
-    categories: categories.data.map(({ attributes }) => attributes.name),
-    platforms: platforms.data.map(
-      ({ attributes }) => attributes.name
-    ) as Platform[]
-  }
-}
+import { TAGS } from '../constants'
 
 export async function getGames({ limit = 9 }: Pagination = {}) {
   const response = await strapiFetch<GamesGraphQLResponse>({
@@ -91,5 +37,5 @@ export async function getGame(slug: string) {
 
   const game = response.body.data.games.data[0]
 
-  return transformeDataGame(game)
+  return transformeDataGameDetails(game)
 }

@@ -1,6 +1,16 @@
 import { screen } from '@testing-library/react'
-import { CartTemplate } from './CartTemplate'
+import { CartTemplate, CartTemplateProps } from './CartTemplate'
 import { renderWithTheme } from '@/utils/tests/helpers'
+import { initialProps as highlight } from '@/components/highlight/mocks'
+import { items as games } from '@/components/game-card-slider/mock'
+
+const initialProps: CartTemplateProps = {
+  recommended: {
+    title: 'You may like these games',
+    games,
+    highlight
+  }
+}
 
 jest.mock('@/components/showcase/Showcase', () => {
   return {
@@ -40,7 +50,7 @@ jest.mock('@/components/empty/Empty', () => {
 
 describe('<CartTemplate />', () => {
   it('should render the heading', () => {
-    renderWithTheme(<CartTemplate />)
+    renderWithTheme(<CartTemplate {...initialProps} />)
 
     expect(
       screen.getByRole('heading', { name: /my cart/i })
@@ -50,7 +60,7 @@ describe('<CartTemplate />', () => {
   })
 
   // it('should render empty when there are no items', () => {
-  //   renderWithTheme(<CartTemplate />)
+  //   renderWithTheme(<CartTemplate {...initialProps}/>)
   //   expect(screen.getByTestId('Mock Empty')).toBeInTheDocument()
   // })
 })

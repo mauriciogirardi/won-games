@@ -1,5 +1,6 @@
 'use client'
 
+import { ResponseRecommended } from '@/lib/strapi/types/recommended'
 import { PaymentOptions } from '@/components/payment-options/PaymentOptions'
 import { BaseTemplate } from '../base-template/BaseTemplate'
 import { Container } from '@/components/container/Container'
@@ -9,14 +10,16 @@ import { Heading } from '@/components/heading/Heading'
 import { Divider } from '@/components/divider/Divider'
 import { Empty } from '@/components/empty/Empty'
 
-import { items } from '@/components/game-card-slider/mock'
-import { initialProps } from '@/components/highlight/mocks'
-import { mockCardList } from '@/components/card-list/mock'
 import { mockPaymentOptions } from '@/components/payment-options/mock'
+import { mockCardList } from '@/components/card-list/mock'
 
 import * as S from './CartTemplate.styles'
 
-export function CartTemplate() {
+export type CartTemplateProps = {
+  recommended: ResponseRecommended
+}
+
+export function CartTemplate({ recommended }: CartTemplateProps) {
   return (
     <BaseTemplate>
       <Container>
@@ -46,9 +49,9 @@ export function CartTemplate() {
       </Container>
 
       <Showcase
-        title="You may like these game"
-        games={items}
-        highlight={initialProps}
+        title={recommended.title}
+        games={recommended.games}
+        highlight={recommended.highlight}
       />
     </BaseTemplate>
   )

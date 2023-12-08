@@ -1,19 +1,19 @@
 'use client'
 
-import { Gallery, GalleryImage } from '@/components/gallery/Gallery'
-import { GameInfo, GameInfoProps } from '@/components/game-info/GameInfo'
 import {
   GameDetails,
   GameDetailsProps
 } from '@/components/game-details/GameDetails'
-import { TextContent } from '@/components/text-content/TextContent'
+import { GameInfo, GameInfoProps } from '@/components/game-info/GameInfo'
+import { Gallery, GalleryImage } from '@/components/gallery/Gallery'
+import { ResponseRecommended } from '@/lib/strapi/types/recommended'
+import { ResponseUpcoming } from '@/lib/strapi/types/upcoming'
 import { BaseTemplate } from '../base-template/BaseTemplate'
+import { TextContent } from '@/components/text-content/TextContent'
+import { Showcase } from '@/components/showcase/Showcase'
+import { Divider } from '@/components/divider/Divider'
 
 import * as S from './GameTemplate.styles'
-import { Showcase } from '@/components/showcase/Showcase'
-import { GameCardProps } from '@/components/game-card/GameCard'
-import { HighlightProps } from '@/components/highlight/Highlight'
-import { Divider } from '@/components/divider/Divider'
 
 export type GameTemplateProps = {
   cover: string
@@ -21,8 +21,8 @@ export type GameTemplateProps = {
   gallery?: GalleryImage[]
   content: string
   gameDetails: GameDetailsProps
-  games: GameCardProps[]
-  highlight: HighlightProps
+  recommended: ResponseRecommended
+  upcoming: ResponseUpcoming
 }
 
 export function GameTemplate({
@@ -31,8 +31,8 @@ export function GameTemplate({
   gameInfo,
   content,
   gameDetails,
-  games,
-  highlight
+  recommended,
+  upcoming
 }: GameTemplateProps) {
   return (
     <BaseTemplate>
@@ -59,9 +59,13 @@ export function GameTemplate({
         <Divider />
       </S.SectionDetails>
 
-      <Showcase title="Upcoming" games={games} highlight={highlight} />
+      <Showcase
+        title={upcoming.title}
+        games={upcoming.games}
+        highlight={upcoming.highlight}
+      />
 
-      <Showcase title="You may like these games" games={games} mt="5rem" />
+      <Showcase title={recommended.title} games={recommended.games} mt="5rem" />
     </BaseTemplate>
   )
 }

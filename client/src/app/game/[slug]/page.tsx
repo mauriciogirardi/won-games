@@ -1,12 +1,11 @@
 import { notFound } from 'next/navigation'
 
-import { useGames } from '@/hooks/useGames'
-import { useHighlight } from '@/hooks/useHighlight'
-import { GameTemplate } from '@/templates/game/GameTemplate'
-
 import { getGame, getGames } from '@/lib/strapi/fetchers/games'
-import { GameInfoProps } from '@/components/game-info/GameInfo'
 import { GameDetailsProps } from '@/components/game-details/GameDetails'
+import { getDataUpcoming } from '@/lib/strapi/fetchers/upcoming'
+import { getRecommended } from '@/lib/strapi/fetchers/recommended'
+import { GameInfoProps } from '@/components/game-info/GameInfo'
+import { GameTemplate } from '@/templates/game/GameTemplate'
 
 type Params = {
   params: {
@@ -25,9 +24,15 @@ export async function generateStaticParams() {
 export default async function Game({ params }: GameProps) {
   const { slug } = params
 
-  const game = await getGame(slug)
-  const { games } = useGames()
-  const { highlight } = useHighlight()
+  const fetchGame = getGame(slug)
+  const fetchRecommended = getRecommended()
+  const fetchUpcoming = getDataUpcoming()
+
+  const [game, recommended, upcoming] = await Promise.all([
+    fetchGame,
+    fetchRecommended,
+    fetchUpcoming
+  ])
 
   if (!slug || !game) {
     return notFound()
@@ -69,9 +74,9 @@ export default async function Game({ params }: GameProps) {
       gallery={gallery}
       gameDetails={gameDetails}
       gameInfo={gameInfo}
-      games={games}
-      highlight={highlight}
       content={content}
+      recommended={recommended}
+      upcoming={upcoming}
     />
   )
 }

@@ -48,8 +48,8 @@ export const mockExploreSidebar: ItemSidebarProps[] = [
     ]
   },
   {
-    title: 'System',
-    name: 'system',
+    title: 'Platforms',
+    name: 'platforms',
     type: 'checkbox',
     fields: [
       {

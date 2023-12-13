@@ -4,6 +4,7 @@ import { renderWithTheme } from '@/utils/tests/helpers'
 import { mockExploreSidebar } from './mock'
 import { css } from 'styled-components'
 import { Overlay } from './ExploreSidebar.styles'
+import userEvent from '@testing-library/user-event'
 
 describe('<ExploreSidebar />', () => {
   it('should render headings', () => {
@@ -15,7 +16,9 @@ describe('<ExploreSidebar />', () => {
     expect(
       screen.getByRole('heading', { name: /sort by/i })
     ).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /system/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /platforms/i })
+    ).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /genre/i })).toBeInTheDocument()
   })
 
@@ -45,7 +48,7 @@ describe('<ExploreSidebar />', () => {
     renderWithTheme(
       <ExploreSidebar
         sidebars={mockExploreSidebar}
-        initialValues={{ windows: true, sort_by: 'low-to-high' }}
+        initialValues={{ platforms: ['windows'], sort_by: 'low-to-high' }}
         onFilter={jest.fn}
       />
     )
@@ -60,14 +63,18 @@ describe('<ExploreSidebar />', () => {
     renderWithTheme(
       <ExploreSidebar
         sidebars={mockExploreSidebar}
-        initialValues={{ windows: true, sort_by: 'low-to-high' }}
+        initialValues={{
+          sort_by: 'low-to-high',
+          platforms: ['windows', 'linux']
+        }}
         onFilter={onFilter}
       />
     )
 
-    fireEvent.click(screen.getByRole('button', { name: /filter/i }))
-
-    expect(onFilter).toBeCalledWith({ windows: true, sort_by: 'low-to-high' })
+    expect(onFilter).toHaveBeenCalledWith({
+      platforms: ['windows', 'linux'],
+      sort_by: 'low-to-high'
+    })
   })
 
   it('should filter with checked values', () => {
@@ -78,10 +85,15 @@ describe('<ExploreSidebar />', () => {
     )
 
     fireEvent.click(screen.getByLabelText(/windows/i))
+    fireEvent.click(screen.getByLabelText(/linux/i))
     fireEvent.click(screen.getByLabelText(/low to high/i))
-    fireEvent.click(screen.getByRole('button', { name: /filter/i }))
 
-    expect(onFilter).toBeCalledWith({ windows: true, sort_by: 'low-to-high' })
+    expect(onFilter).toHaveBeenCalledTimes(4)
+
+    expect(onFilter).toHaveBeenCalledWith({
+      platforms: ['windows', 'linux'],
+      sort_by: 'low-to-high'
+    })
   })
 
   it('should alter between radio options', () => {
@@ -93,25 +105,49 @@ describe('<ExploreSidebar />', () => {
 
     fireEvent.click(screen.getByLabelText(/low to high/i))
     fireEvent.click(screen.getByLabelText(/high to low/i))
-    fireEvent.click(screen.getByRole('button', { name: /filter/i }))
 
-    expect(onFilter).toBeCalledWith({ sort_by: 'high-to-low' })
+    expect(onFilter).toHaveBeenCalledWith({ sort_by: 'high-to-low' })
   })
 
-  it('should open/close sidebar when filtering on mobile', () => {
+  it('should open/close sidebar when filtering on mobile', async () => {
     const { container } = renderWithTheme(
       <ExploreSidebar sidebars={mockExploreSidebar} onFilter={jest.fn} />
     )
 
-    const variant = {
+    // INITIAL STATUS
+    expect(container.firstChild).not.toHaveStyleRule('opacity', '1', {
       media: '(max-width:  768px)',
       modifier: String(css`
         ${Overlay}
       `)
-    }
+    })
 
-    const Element = container.firstChild
+    // OPEN FILTER
+    await userEvent.click(screen.getByLabelText(/open filters/))
+    expect(container.firstChild).not.toHaveStyleRule('opacity', '1', {
+      media: '(max-width:  768px)',
+      modifier: String(css`
+        ${Overlay}
+      `)
+    })
 
-    expect(Element).not.toHaveStyleRule('opacity', '1', variant)
+    // CLOSE FILTER
+    await userEvent.click(screen.getByLabelText(/close filters/))
+    expect(Element).not.toHaveStyleRule('opacity', '1', {
+      media: '(max-width:  768px)',
+      modifier: String(css`
+        ${Overlay}
+      `)
+    })
+
+    // OPEN/CLOSE FILTER BUTTON
+    await userEvent.click(screen.getByLabelText(/open filters/))
+    await userEvent.click(screen.getByRole('button', { name: /filter/i }))
+    expect(Element).not.toHaveStyleRule('opacity', '1', {
+      media: '(max-width:  768px)',
+      modifier: String(css`
+        ${Overlay}
+      `)
+    })
   })
 })

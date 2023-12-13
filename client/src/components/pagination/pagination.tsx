@@ -8,9 +8,12 @@ export type PaginationProps = {
   page: number
   pageSize: number
   total: number
+  query?: {
+    [key: string]: string | string[] | boolean
+  }
 }
 
-export function Pagination({ page, pageSize, total }: PaginationProps) {
+export function Pagination({ page, pageSize, total, query }: PaginationProps) {
   const { isCurrentPage, pages } = usePagination({ page, pageSize, total })
 
   return (
@@ -27,7 +30,18 @@ export function Pagination({ page, pageSize, total }: PaginationProps) {
               {isEllipsis ? (
                 '...'
               ) : (
-                <Link href={`?page=${page}&pageSize=${pageSize}`}>{page}</Link>
+                <Link
+                  href={{
+                    href: '/games',
+                    query: {
+                      page,
+                      pageSize,
+                      ...query
+                    }
+                  }}
+                >
+                  {page}
+                </Link>
               )}
             </S.Li>
           )

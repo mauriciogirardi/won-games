@@ -27,7 +27,7 @@ jest.mock('@/components/game-card/GameCard', () => ({
 }))
 
 describe('<GamesTemplate />', () => {
-  it('should render the heading', () => {
+  it('should render the heading', async () => {
     renderWithTheme(
       <GamesTemplate
         filterItems={mockExploreSidebar}
@@ -38,11 +38,11 @@ describe('<GamesTemplate />', () => {
       />
     )
 
-    expect(screen.getByTestId('Mock ExploreSidebar')).toBeInTheDocument()
-    expect(screen.getByTestId('Mock BaseTemplate')).toBeInTheDocument()
-    expect(screen.getByTestId('Mock GameCard')).toBeInTheDocument()
-    expect(
-      screen.getByRole('button', { name: /show more/i })
+    await expect(screen.findByTestId('Mock ExploreSidebar')).toBeInTheDocument()
+    await expect(screen.findByTestId('Mock BaseTemplate')).toBeInTheDocument()
+    await expect(screen.findByTestId('Mock GameCard')).toBeInTheDocument()
+    await expect(
+      screen.findByRole('button', { name: /show more/i })
     ).toBeInTheDocument()
   })
 })

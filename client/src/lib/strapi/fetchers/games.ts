@@ -7,13 +7,19 @@ import { getGameQuery } from '../queries/game'
 import { strapiFetch } from '..'
 import { TAGS } from '../constants'
 
-export async function getGames({ pagination }: GetGamesProps = {}) {
+export async function getGames({
+  pagination: dataPagination,
+  filters,
+  sort
+}: GetGamesProps = {}) {
   const response = await strapiFetch<GamesGraphQLResponse>({
     query: getGamesQuery,
     next: { tags: [TAGS.GAMES_EXPLORE], revalidate: 60 },
     variables: {
-      pageSize: pagination?.pageSize || 15,
-      page: pagination?.page || 1
+      pageSize: dataPagination?.pageSize || 15,
+      page: dataPagination?.page || 1,
+      ...(sort && { sort }),
+      ...(filters && { filters })
     }
   })
 

@@ -14,8 +14,17 @@ export const getGameQuery = /* GraphQL */ `
 `
 
 export const getGamesQuery = /* GraphQL */ `
-  query queryGames($pageSize: Int!, $page: Int!) {
-    games(pagination: { pageSize: $pageSize, page: $page }) {
+  query queryGames(
+    $pageSize: Int
+    $page: Int
+    $filters: GameFiltersInput
+    $sort: [String]
+  ) {
+    games(
+      pagination: { pageSize: $pageSize, page: $page }
+      filters: $filters
+      sort: $sort
+    ) {
       data {
         attributes {
           ...gamesFragment

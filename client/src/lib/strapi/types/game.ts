@@ -67,6 +67,27 @@ export type AttributesGames = {
 
 export type GetGamesProps = {
   pagination?: Pagination
+  sort?: string[] | string | null
+  filters?: {
+    price?: {
+      lte?: number
+    }
+    categories?: {
+      slug?: {
+        in?: string[]
+      }
+    }
+    platforms?: {
+      name?: {
+        in?: string[]
+      }
+    }
+  } | null
+}
+
+type Variables = Pagination & {
+  filters?: unknown | null
+  sort?: string[] | string | null
 }
 
 export type GamesGraphQLResponse = {
@@ -84,5 +105,5 @@ export type GamesGraphQLResponse = {
     }
   }
 
-  variables: Pagination
+  variables: Variables
 }

@@ -1,18 +1,19 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
 
 import {
   ExploreSidebar,
   ItemSidebarProps
 } from '@/components/explore-sidebar/ExploreSidebar'
-import { BaseTemplate } from '../base-template/BaseTemplate'
+import { buildURL, parseQueryStringToFilter } from '@/filter'
 import { GameCard, GameCardProps } from '@/components/game-card/GameCard'
+import { BaseTemplate } from '../base-template/BaseTemplate'
+import { Pagination } from '@/components/pagination/pagination'
 import { Grid } from '@/components/grid/Grid'
 
 import * as S from './games-template.styles'
-import { Pagination } from '@/components/pagination/pagination'
 
 export type GamesTemplateProps = {
   games?: GameCardProps[]
@@ -22,6 +23,10 @@ export type GamesTemplateProps = {
   total: number
 }
 
+type QueryItems = {
+  [key: string]: string | string[] | boolean
+}
+
 export async function GamesTemplate({
   filterItems,
   games,
@@ -29,14 +34,40 @@ export async function GamesTemplate({
   pageSize,
   total
 }: GamesTemplateProps) {
-  const handleFilter = () => {
+  const { push } = useRouter()
+  const searchParams = useSearchParams()
+  const [query, setQuery] = useState({})
+  const [queryString, setQueryString] = useState<QueryItems>({})
+
+  const showPagination = pageSize <= total
+
+  const handleFilter = (items: QueryItems) => {
+    const path = buildURL(`/games?page=${page}&pageSize=${pageSize}`, items)
+    setQueryString(items)
+    push(path, { scroll: false })
     return
   }
+
+  useEffect(() => {
+    setQuery({
+      platforms: searchParams.getAll('platforms'),
+      sort_by: searchParams.get('sort'),
+      price: searchParams.get('price'),
+      categories: searchParams.getAll('categories')
+    })
+  }, [searchParams])
 
   return (
     <BaseTemplate>
       <S.GamesContainer>
-        <ExploreSidebar onFilter={handleFilter} sidebars={filterItems} />
+        <ExploreSidebar
+          onFilter={handleFilter}
+          sidebars={filterItems}
+          initialValues={parseQueryStringToFilter({
+            queryString: query,
+            filterItems
+          })}
+        />
 
         <section>
           <Grid>
@@ -45,7 +76,14 @@ export async function GamesTemplate({
             </Suspense>
           </Grid>
 
-          <Pagination page={page} pageSize={pageSize} total={total} />
+          {showPagination && (
+            <Pagination
+              page={page}
+              pageSize={pageSize}
+              total={total}
+              query={queryString}
+            />
+          )}
         </section>
       </S.GamesContainer>
     </BaseTemplate>

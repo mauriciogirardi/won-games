@@ -16,17 +16,18 @@ export default {
 
 export const Default: StoryObj<typeof ExploreSidebar> = {
   args: {
+    onFilter: () => ({}),
     sidebars: mockExploreSidebar
   }
 }
 
 export const WithInitialValues: StoryObj<typeof ExploreSidebar> = {
   args: {
+    onFilter: () => ({}),
     sidebars: mockExploreSidebar,
     initialValues: {
-      windows: true,
-      sort_by: 'high-to-low',
-      action: true
+      platforms: ['windows', 'linux'],
+      sort_by: 'high-to-low'
     }
   }
 }

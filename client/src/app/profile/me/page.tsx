@@ -1,5 +1,5 @@
-import { FormProfile } from '@/components/form-profile/FormProfile'
-import { ProfileTemplate } from '@/templates/profile/ProfileTemplate'
+import { FormProfile } from '@/components/form-profile'
+import { ProfileTemplate } from '@/templates/profile/profile-template'
 
 export default function ProfileMe() {
   return (

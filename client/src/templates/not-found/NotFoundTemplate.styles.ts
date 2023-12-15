@@ -1,6 +1,6 @@
-import { Container } from '@/components/container/Container'
+import { Container } from '@/components/container'
 import styled from 'styled-components'
-import * as StylesEmpty from '@/components/empty/Empty.styles'
+import * as StylesEmpty from '@/components/empty/empty.styles'
 
 export const NotFoundContainer = styled(Container)`
   ${StylesEmpty.StyledImage} {

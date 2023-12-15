@@ -1,7 +1,7 @@
 'use client'
 
-import { BaseTemplate } from '../base-template/BaseTemplate'
-import { Empty } from '@/components/empty/Empty'
+import { BaseTemplate } from '../base/base-template'
+import { Empty } from '@/components/empty'
 import * as S from './NotFoundTemplate.styles'
 
 export default function NotFoundTemplate() {

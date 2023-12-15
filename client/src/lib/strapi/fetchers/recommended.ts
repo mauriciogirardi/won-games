@@ -3,8 +3,8 @@ import {
   RecommendedGraphQLResponse,
   ResponseRecommended
 } from '../types/recommended'
-import { transformeDataHighlight } from './utils/transformeDataHighlight'
-import { transformeDataGames } from './utils/transformeDataGames'
+import { transformeDataHighlight } from './utils/transforme-data-highlight'
+import { transformeDataGames } from './utils/transforme-data-games'
 import { getRecommendedQuery } from '../queries/recommended'
 import { strapiFetch } from '..'
 

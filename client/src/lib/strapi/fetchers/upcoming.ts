@@ -3,8 +3,8 @@ import {
   Upcoming,
   UpcomingGraphQLResponse
 } from '../types/upcoming'
-import { transformeDataHighlight } from './utils/transformeDataHighlight'
-import { transformeDataGames } from './utils/transformeDataGames'
+import { transformeDataHighlight } from './utils/transforme-data-highlight'
+import { transformeDataGames } from './utils/transforme-data-games'
 import { getUpcomingQuery } from '../queries/upcoming'
 import { strapiFetch } from '..'
 

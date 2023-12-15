@@ -1,5 +1,5 @@
-import { FormSignUp } from '@/components/form-sign-up/FormSignUp'
-import { AuthTemplate } from '@/templates/auth/AuthTemplate'
+import { FormSignUp } from '@/components/form-sign-up'
+import { AuthTemplate } from '@/templates/auth/auth-template'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

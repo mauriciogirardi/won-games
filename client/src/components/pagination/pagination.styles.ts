@@ -1,4 +1,4 @@
-import { shouldForwardProps } from '@/styles/utils/shouldForwardProp'
+import { shouldForwardProps } from '@/styles/utils/should-forward-prop'
 import styled, { css } from 'styled-components'
 
 export const PaginationContainer = styled.div`

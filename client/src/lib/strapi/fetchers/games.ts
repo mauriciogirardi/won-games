@@ -1,5 +1,5 @@
-import { transformeDataGameDetails } from './utils/transformeDataGameDetails'
-import { transformeDataGames } from './utils/transformeDataGames'
+import { transformeDataGameDetails } from './utils/transforme-data-game-details'
+import { transformeDataGames } from './utils/transforme-data-games'
 import { GameGraphQLResponse, GetGamesProps } from '../types/game'
 import { GamesGraphQLResponse } from '../types/game'
 import { getGamesQuery } from '../queries/game'

@@ -1,4 +1,4 @@
-import { HighlightProps } from '@/components/highlight/Highlight'
+import { HighlightProps } from '@/components/highlight'
 import { AttributesGames } from './game'
 import { HighlightCommon } from './home'
 

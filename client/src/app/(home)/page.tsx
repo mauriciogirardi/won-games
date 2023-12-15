@@ -1,5 +1,5 @@
 import { getDataHome } from '@/lib/strapi/fetchers/home'
-import { HomeTemplate } from '@/templates/home/HomeTemplate'
+import { HomeTemplate } from '@/templates/home/home-template'
 
 export const revalidate = 60 // revalidate at most every one minute
 

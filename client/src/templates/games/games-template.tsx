@@ -1,19 +1,17 @@
 'use client'
 
-import { Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
-import {
-  ExploreSidebar,
-  ItemSidebarProps
-} from '@/components/explore-sidebar/ExploreSidebar'
+import { ExploreSidebar, ItemSidebarProps } from '@/components/explore-sidebar'
 import { buildURL, parseQueryStringToFilter } from '@/filter'
-import { GameCard, GameCardProps } from '@/components/game-card/GameCard'
-import { BaseTemplate } from '../base-template/BaseTemplate'
+import { GameCard, GameCardProps } from '@/components/game-card'
+import { BaseTemplate } from '../base/base-template'
 import { Pagination } from '@/components/pagination/pagination'
-import { Grid } from '@/components/grid/Grid'
+import { Grid } from '@/components/grid'
 
 import * as S from './games-template.styles'
+import { Empty } from '@/components/empty'
 
 export type GamesTemplateProps = {
   games?: GameCardProps[]
@@ -71,10 +69,15 @@ export async function GamesTemplate({
 
         <section>
           <Grid>
-            <Suspense>
-              {games?.map((item) => <GameCard key={item.title} {...item} />)}
-            </Suspense>
+            {games?.map((item) => <GameCard key={item.title} {...item} />)}
           </Grid>
+
+          {games && games?.length <= 0 && (
+            <Empty
+              title="Not Found"
+              description="We didn't find any games with this filter"
+            />
+          )}
 
           {showPagination && (
             <Pagination

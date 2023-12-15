@@ -1,6 +1,6 @@
-import { OrderList } from '@/components/order-list/OrderList'
-import { mockOrderList } from '@/components/order-list/mock'
-import { ProfileTemplate } from '@/templates/profile/ProfileTemplate'
+import { OrderList } from '@/components/order-list'
+import { mockOrderList } from '@/components/order-list/mock/order-list'
+import { ProfileTemplate } from '@/templates/profile/profile-template'
 
 export default function ProfileOrders() {
   return (

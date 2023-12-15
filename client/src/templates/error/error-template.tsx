@@ -1,8 +1,8 @@
-import { Container } from '@/components/container/Container'
-import { BaseTemplate } from '../base-template/BaseTemplate'
+import { Container } from '@/components/container'
+import { BaseTemplate } from '../base/base-template'
 import * as S from './error-template-styles'
-import { Button } from '@/components/button/Button'
-import { Empty } from '@/components/empty/Empty'
+import { Button } from '@/components/button'
+import { Empty } from '@/components/empty'
 
 export function ErrorTemplate({ reset }: { reset: () => void }) {
   return (

@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation'
 
 import { getGame, getGames } from '@/lib/strapi/fetchers/games'
-import { GameDetailsProps } from '@/components/game-details/GameDetails'
+import { GameDetailsProps } from '@/components/game-details'
 import { getDataUpcoming } from '@/lib/strapi/fetchers/upcoming'
 import { getRecommended } from '@/lib/strapi/fetchers/recommended'
-import { GameInfoProps } from '@/components/game-info/GameInfo'
-import { GameTemplate } from '@/templates/game/GameTemplate'
+import { GameInfoProps } from '@/components/game-info'
+import { GameTemplate } from '@/templates/game/game-template'
 
 type Params = {
   params: {

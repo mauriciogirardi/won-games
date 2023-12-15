@@ -1,4 +1,4 @@
-import { ItemSidebarProps } from '@/components/explore-sidebar/ExploreSidebar'
+import { ItemSidebarProps } from '@/components/explore-sidebar'
 import { CHECKBOX, RADIO } from '.'
 
 const filterPrice: ItemSidebarProps = {

@@ -1,4 +1,4 @@
-import { ItemSidebarProps } from '@/components/explore-sidebar/ExploreSidebar'
+import { ItemSidebarProps } from '@/components/explore-sidebar'
 import { ParsedUrlQueryInput } from 'querystring'
 
 export type FilterItemsType = Pick<ItemSidebarProps, 'type' | 'name'>[]

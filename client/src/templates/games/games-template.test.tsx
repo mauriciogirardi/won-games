@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react'
 import { GamesTemplate } from './games-template'
 import { renderWithTheme } from '@/utils/tests/helpers'
-import { mockExploreSidebar } from '@/components/explore-sidebar/mock'
+import { mockExploreSidebar } from '@/components/explore-sidebar/mock/explore-sidebar'
 import { ReactNode } from 'react'
-import { items } from '@/components/game-card-slider/mock'
+import { mockCardSlider as games } from '@/components/game-card-slider/mock/game-card-slider'
 
 jest.mock('@/templates/base-template/BaseTemplate', () => ({
   __esModule: true,
@@ -31,7 +31,7 @@ describe('<GamesTemplate />', () => {
     renderWithTheme(
       <GamesTemplate
         filterItems={mockExploreSidebar}
-        games={items}
+        games={games}
         page={1}
         pageSize={10}
         total={20}

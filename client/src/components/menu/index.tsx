@@ -88,8 +88,12 @@ export function Menu({ username }: MenuProps) {
 
           {!!username && (
             <>
-              <S.MenuLink href={PATH_PROFILE_ME}>My account</S.MenuLink>
-              <S.MenuLink href={PATH_WISHLIST}>Wishlist</S.MenuLink>
+              <S.MenuLink data-testid="my account" href={PATH_PROFILE_ME}>
+                My account
+              </S.MenuLink>
+              <S.MenuLink data-testid="wishlist" href={PATH_WISHLIST}>
+                Wishlist
+              </S.MenuLink>
             </>
           )}
         </S.MenuNav>

@@ -24,7 +24,7 @@ const initialProps: HomeProps = {
   newGamesHighlight: initialHighlights
 }
 
-jest.mock('@/components/showcase/Showcase', () => {
+jest.mock('@/components/showcase', () => {
   return {
     __esModule: true,
     Showcase: function Mock() {

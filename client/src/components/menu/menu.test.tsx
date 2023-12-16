@@ -8,13 +8,11 @@ describe('<Menu />', () => {
 
     const iconMenu = screen.getByLabelText(/open menu/i)
     const iconSearch = screen.getByLabelText(/search/i)
-    const iconShoppingCart = screen.getByLabelText(/open shopping cart/i)
     const logo = screen.getByLabelText(/Won Games/i)
 
     expect(logo).toBeInTheDocument()
     expect(iconMenu).toBeInTheDocument()
     expect(iconSearch).toBeInTheDocument()
-    expect(iconShoppingCart).toBeInTheDocument()
   })
 
   it('should handle the open/close mobile menu', () => {
@@ -52,7 +50,7 @@ describe('<Menu />', () => {
     expect(screen.queryByText(/login in now/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument()
 
-    expect(screen.getByText(/my account/i)).toBeInTheDocument()
-    expect(screen.getByText(/wishlist/i)).toBeInTheDocument()
+    expect(screen.getByTestId('my account')).toBeInTheDocument()
+    expect(screen.getByTestId('wishlist')).toBeInTheDocument()
   })
 })

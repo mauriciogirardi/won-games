@@ -9,21 +9,21 @@ jest.mock('next/navigation', () => ({
   usePathname: jest.fn(() => '/profile/me')
 }))
 
-jest.mock('@/templates/base-template/BaseTemplate', () => ({
+jest.mock('../base/base-template', () => ({
   __esModule: true,
   BaseTemplate: function Mock({ children }: { children: ReactNode }) {
     return <div data-testid="Mock BaseTemplate">{children}</div>
   }
 }))
 
-jest.mock('@/components/heading/Heading', () => ({
+jest.mock('@/components/heading', () => ({
   __esModule: true,
   Heading: function Mock({ children }: { children: ReactNode }) {
     return <div data-testid="Mock Heading">{children}</div>
   }
 }))
 
-jest.mock('@/components/profile-menu/ProfileMenu', () => ({
+jest.mock('@/components/profile-menu', () => ({
   __esModule: true,
   ProfileMenu: function Mock() {
     return <div data-testid="Mock ProfileMenu" />

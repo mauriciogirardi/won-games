@@ -4,14 +4,14 @@ import { renderWithTheme } from '@/utils/tests/helpers'
 import { ReactNode } from 'react'
 import { mockOrderList } from './mock/order-list'
 
-jest.mock('@/components/game-item/GameItem', () => ({
+jest.mock('@/components/game-item', () => ({
   __esModule: true,
   GameItem: function Mock({ children }: { children: ReactNode }) {
     return <div data-testid="Mock GameItem">{children}</div>
   }
 }))
 
-jest.mock('@/components/empty/Empty', () => ({
+jest.mock('@/components/empty', () => ({
   __esModule: true,
   Empty: function Mock() {
     return <div data-testid="Mock Empty"></div>

@@ -27,7 +27,7 @@ const props: GameTemplateProps = {
   }
 }
 
-jest.mock('@/components/gallery/Gallery', () => {
+jest.mock('@/components/gallery', () => {
   return {
     __esModule: true,
     Gallery: function Mock() {
@@ -36,7 +36,7 @@ jest.mock('@/components/gallery/Gallery', () => {
   }
 })
 
-jest.mock('@/components/game-details/GameDetails', () => {
+jest.mock('@/components/game-details', () => {
   return {
     __esModule: true,
     GameDetails: function Mock() {
@@ -45,7 +45,7 @@ jest.mock('@/components/game-details/GameDetails', () => {
   }
 })
 
-jest.mock('@/components/game-info/GameInfo', () => {
+jest.mock('@/components/game-info', () => {
   return {
     __esModule: true,
     GameInfo: function Mock() {
@@ -54,7 +54,7 @@ jest.mock('@/components/game-info/GameInfo', () => {
   }
 })
 
-jest.mock('@/components/showcase/Showcase', () => {
+jest.mock('@/components/showcase', () => {
   return {
     __esModule: true,
     Showcase: function Mock() {

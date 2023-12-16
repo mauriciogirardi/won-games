@@ -12,7 +12,7 @@ const initialProps: CartTemplateProps = {
   }
 }
 
-jest.mock('@/components/showcase/Showcase', () => {
+jest.mock('@/components/showcase', () => {
   return {
     __esModule: true,
     Showcase: function Mock() {
@@ -21,7 +21,7 @@ jest.mock('@/components/showcase/Showcase', () => {
   }
 })
 
-jest.mock('@/components/card-list/CardList', () => {
+jest.mock('@/components/card-list', () => {
   return {
     __esModule: true,
     CardList: function Mock() {
@@ -30,7 +30,7 @@ jest.mock('@/components/card-list/CardList', () => {
   }
 })
 
-jest.mock('@/components/payment-options/PaymentOptions', () => {
+jest.mock('@/components/payment-options', () => {
   return {
     __esModule: true,
     PaymentOptions: function Mock() {
@@ -39,7 +39,7 @@ jest.mock('@/components/payment-options/PaymentOptions', () => {
   }
 })
 
-jest.mock('@/components/empty/Empty', () => {
+jest.mock('@/components/empty', () => {
   return {
     __esModule: true,
     Empty: function Mock() {

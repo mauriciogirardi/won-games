@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import { BaseTemplate } from './base-template'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
-jest.mock('@/components/menu/Menu', () => {
+jest.mock('@/components/menu', () => {
   return {
     __esModule: true,
     Menu: function Mock() {
@@ -11,7 +11,7 @@ jest.mock('@/components/menu/Menu', () => {
   }
 })
 
-jest.mock('@/components/footer/Footer', () => {
+jest.mock('@/components/footer', () => {
   return {
     __esModule: true,
     Footer: function Mock() {

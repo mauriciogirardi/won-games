@@ -6,6 +6,14 @@ import { getDataUpcoming } from '@/lib/strapi/fetchers/upcoming'
 import { getRecommended } from '@/lib/strapi/fetchers/recommended'
 import { GameInfoProps } from '@/components/game-info'
 import { GameTemplate } from '@/templates/game/game-template'
+import { Metadata } from 'next'
+
+export const runtime = 'edge'
+export const revalidate = 43200 // 12 hours in seconds
+
+export const metadata: Metadata = {
+  title: 'Game Details'
+}
 
 type Params = {
   params: {
@@ -17,7 +25,7 @@ type GameProps = {
 }
 
 export async function generateStaticParams() {
-  const { games } = await getGames()
+  const { games } = await getGames({ pagination: { page: 1, pageSize: 15 } })
   return games?.map(({ slug }) => ({ slug }))
 }
 

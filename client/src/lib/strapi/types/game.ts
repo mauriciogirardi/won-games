@@ -28,6 +28,7 @@ export type Game = {
 }
 
 export type AttributesGame = {
+  id: string
   attributes: {
     name: string
     slug: string
@@ -59,6 +60,7 @@ export type GameGraphQLResponse = {
 // TYPES GAMES
 
 export type AttributesGames = {
+  id: string
   attributes: Pick<
     AttributesGame['attributes'],
     'name' | 'slug' | 'price' | 'cover' | 'developers'

@@ -2,7 +2,7 @@
 
 import { BaseTemplate } from '../base/base-template'
 import { Empty } from '@/components/empty'
-import * as S from './NotFoundTemplate.styles'
+import * as S from './not-found-template.styles'
 
 export default function NotFoundTemplate() {
   return (

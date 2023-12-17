@@ -1,4 +1,3 @@
-import { LogoContainer } from '@/components/logo/logo.styles'
 import styled from 'styled-components'
 import { css } from 'styled-components'
 
@@ -33,11 +32,11 @@ export const Spin = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
+`
 
-  ${LogoContainer} {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+export const Logo = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `

@@ -1,12 +1,20 @@
 import StyledComponentsRegistry from '@/lib/registry'
 import type { Metadata } from 'next'
 import { Providers } from './providers'
+import { Suspense } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Won Games',
+  title: {
+    default: 'Won Games',
+    template: 'Won Games | %s'
+  },
   description: 'The best Game Stores in the world!',
   icons: '/img/logo.png',
-  keywords: ['Games, Actions']
+  keywords: ['Games, Actions'],
+  robots: {
+    follow: true,
+    index: true
+  }
 }
 
 export default function RootLayout({
@@ -18,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StyledComponentsRegistry>
-          <Providers>{children}</Providers>
+          <Providers>
+            <Suspense>{children}</Suspense>
+          </Providers>
         </StyledComponentsRegistry>
       </body>
     </html>

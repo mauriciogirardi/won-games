@@ -2,6 +2,7 @@ import { GamesTemplate } from '@/templates/games/games-template'
 import { getGames } from '@/lib/strapi/fetchers/games'
 import { filterItems } from '@/filter/filter-datas'
 import { parseQueryStringToWhere } from '@/filter'
+import { Metadata } from 'next'
 
 type GamesProps = {
   searchParams: {
@@ -11,6 +12,10 @@ type GamesProps = {
     platform?: string
     sort?: string | null
   }
+}
+
+export const metadata: Metadata = {
+  title: 'Games'
 }
 
 export default async function Games({ searchParams }: GamesProps) {

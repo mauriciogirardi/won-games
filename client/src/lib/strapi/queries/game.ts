@@ -4,6 +4,7 @@ export const getGameQuery = /* GraphQL */ `
   query queryGame($slug: String!) {
     games(filters: { slug: { eq: $slug } }) {
       data {
+        id
         attributes {
           ...gameFragment
         }
@@ -26,6 +27,7 @@ export const getGamesQuery = /* GraphQL */ `
       sort: $sort
     ) {
       data {
+        id
         attributes {
           ...gamesFragment
         }

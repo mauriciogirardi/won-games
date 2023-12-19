@@ -8,7 +8,6 @@ import { GameInfoProps } from '@/components/game-info'
 import { GameTemplate } from '@/templates/game/game-template'
 import { Metadata } from 'next'
 
-export const runtime = 'edge'
 export const revalidate = 43200 // 12 hours in seconds
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ type GameProps = {
 }
 
 export async function generateStaticParams() {
-  const { games } = await getGames({ pagination: { page: 1, pageSize: 15 } })
+  const { games } = await getGames()
   return games?.map(({ slug }) => ({ slug }))
 }
 

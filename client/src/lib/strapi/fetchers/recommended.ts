@@ -24,8 +24,7 @@ function parsedDataRecommended(recommended: Recommended): ResponseRecommended {
 
 export async function getRecommended() {
   const { body } = await strapiFetch<RecommendedGraphQLResponse>({
-    query: getRecommendedQuery,
-    next: { revalidate: 60 }
+    query: getRecommendedQuery
   })
 
   const response = body.data.recommended.data.attributes.section

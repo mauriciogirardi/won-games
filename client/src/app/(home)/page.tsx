@@ -3,7 +3,6 @@ import { HomeTemplate } from '@/templates/home/home-template'
 import { Metadata } from 'next'
 
 export const revalidate = 60 // revalidate at most every one minute
-export const runtime = 'edge'
 
 export const metadata: Metadata = {
   title: 'Home'

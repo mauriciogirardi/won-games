@@ -14,7 +14,7 @@ export async function getGames({
 }: GetGamesProps = {}) {
   const response = await strapiFetch<GamesGraphQLResponse>({
     query: getGamesQuery,
-    next: { tags: [TAGS.GAMES_EXPLORE], revalidate: 60 },
+    next: { tags: [TAGS.GAMES_EXPLORE] },
     variables: {
       pageSize: dataPagination?.pageSize || 15,
       page: dataPagination?.page || 1,
@@ -34,7 +34,7 @@ export async function getGames({
 export async function getGame(slug: string) {
   const response = await strapiFetch<GameGraphQLResponse>({
     query: getGameQuery,
-    next: { tags: [TAGS.GAME_SLUG], revalidate: 60 },
+    next: { tags: [TAGS.GAME_SLUG] },
     variables: {
       slug
     }

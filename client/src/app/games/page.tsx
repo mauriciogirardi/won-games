@@ -1,8 +1,11 @@
-import { GamesTemplate } from '@/templates/games/games-template'
-import { getGames } from '@/lib/strapi/fetchers/games'
-import { filterItems } from '@/filter/filter-datas'
-import { parseQueryStringToWhere } from '@/filter'
 import { Metadata } from 'next'
+
+import { parseQueryStringToWhere } from '@/filter'
+import { GamesTemplate } from '@/templates/games/games-template'
+import { filterItems } from '@/filter/filter-datas'
+import { getGames } from '@/lib/strapi/fetchers/games'
+
+export const revalidate = 60 * 60
 
 type GamesProps = {
   searchParams: {
@@ -26,10 +29,10 @@ export default async function Games({ searchParams }: GamesProps) {
     queryString: searchParams,
     filterItems
   })
-
+  const hasFilter = Object.keys(filters).length === 0
   const { games, pagination } = await getGames({
-    pagination: { page, pageSize },
-    ...(filters && { filters }),
+    ...(hasFilter && { pagination: { page, pageSize } }),
+    ...(!hasFilter && { filters }),
     ...(sort && { sort })
   })
 

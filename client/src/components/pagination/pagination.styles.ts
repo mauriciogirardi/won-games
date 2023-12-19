@@ -16,7 +16,9 @@ export const Ul = styled.ul`
   `}
 `
 
-export const Li = styled.li.withConfig(shouldForwardProps(['isNotPage']))<{
+export const Li = styled.li.withConfig(
+  shouldForwardProps(['isNotPage', 'isCurrentPage'])
+)<{
   isNotPage: boolean
   isCurrentPage: boolean
 }>`
